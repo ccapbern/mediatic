@@ -1,4 +1,7 @@
+# Eclipse specific
 /target/
 .classpath
 .project
 .settings
+
+# Netbeans specific

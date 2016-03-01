@@ -26,7 +26,6 @@ input:required:focus {
 	}
 }
 
-.linavbar {
-	width:150px;
-	text-align: center;
+.user-control {
+	padding-left: 0px;
 }

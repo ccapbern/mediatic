@@ -26,9 +26,6 @@ input:required:focus {
 	}
 }
 
-@media screen and (min-width: 768px) {
-	.linavbar {
-		width:150px;
-		text-align: center;
-	}
+.user-control {
+	padding-left: 0px;
 }

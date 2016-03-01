@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/common.css">
+        <script type="text/javascript" src="bootstrap/js/jquery-1.12.1.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <!-- Menu -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav col-sr-2 col-md-4">
+                        <li class="linavbar">
+                            <a href="media.html">Média</a>
+                        </li>
+                        <li class="linavbar">
+                            <a href="adherent.html">Adhérent</a>
+                        </li>
+                    </ul>
+                    <!-- right side of the navbar : login -->
+                    <div class="col-sr-6 col-md-8 user-control">
+                        <div class="navbar-text navbar-right ">
+                            <span class="glyphicon glyphicon-user hidden-xs"></span> <a href="login.html" class="navbar-link">Mark Otto</a>
+                            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <!--sidebox-->
+        <div id="sidebox_clos">
+            <div id="sidebox">
+                <a href="#sidebox" class="ouvrir"><span class="glyphicon glyphicon-search"></span></a>
+                <a href="#sidebox_clos" class="fermer"><span class="glyphicon glyphicon-search"></span></a>
+                <form action="#" method="post" class="form-horizontal">
+                    <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
+                    <div class="form-group">
+                        <label for="title" class="control-label col-md-1 hidden-xs">Titre</label>
+                        <div class="divinput col-sm-12">
+                            <input type="text" name="title" id="title" placeholder="Titre" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="author" class="control-label col-md-1 hidden-xs">Auteur</label>
+                        <div class="divinput col-sm-12">
+                            <input type="text" name="author" id="author" placeholder="Auteur" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-1 hidden-xs">Type</label>
+                        <div class="divinput col-sm-12 ">
+                            <select name="type" class="form-control">
+                                <option value="book">Livre</option>
+                                <option value="cd">CD</option>
+                                <option value="dvd">DVD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" value="Enregistrer" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

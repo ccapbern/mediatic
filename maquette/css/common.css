@@ -1,0 +1,27 @@
+main {
+	margin: auto;
+	padding: 10px;
+	width: 60%;
+}
+
+legend {
+	width: 20%;
+	margin-bottom: 50px;
+	border-bottom: none;
+	text-align: center;
+}
+
+fieldset {
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+input:required:focus {
+	border: 1px solid #ff8080;
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		width: 100%;
+	}
+}

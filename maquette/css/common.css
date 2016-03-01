@@ -1,4 +1,4 @@
-main {
+.reduce {
 	margin: auto;
 	padding: 10px;
 	width: 60%;
@@ -16,16 +16,27 @@ fieldset {
 	padding: 10px;
 }
 
+table, th, td{
+	text-align: center;
+}
+
 input:required:focus {
 	border: 1px solid #ff8080;
 }
 
+.user-control {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 @media screen and (max-width: 768px) {
-	main {
+	.reduce {
 		width: 100%;
 	}
 }
 
-.user-control {
-	padding-left: 0px;
+@media screen and (max-width: 992px) {
+	.dataTable {
+		margin-top: 20px;
+	}
 }

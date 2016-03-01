@@ -20,6 +20,10 @@ table, th, td{
 	text-align: center;
 }
 
+.paginate {
+	text-align: center;
+}
+
 input:required:focus {
 	border: 1px solid #ff8080;
 }

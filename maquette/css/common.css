@@ -46,6 +46,10 @@ input:required:focus {
     margin-bottom: 0px;
 }
 
+.navbar-inverse {
+    border-radius: 0px;
+}
+
 /*     sidebox       */
 #sidebox {
     position: absolute;
@@ -56,21 +60,6 @@ input:required:focus {
     color: #fff;
     -webkit-transition: all .5s ease-in;
     transition: all .5s ease-in;
-}
-
-@media screen and (max-width: 768px) {
-	#sidebox {
-		width: 100%;
-	}
-        #sidebox a.ouvrir,
-        #sidebox a.fermer {
-            right: 20px;
-            border: 1px solid white;
-            top: 10px;
-        }
-        #sidebox_clos:target #sidebox {
-            left: -100%;
-    }
 }
 
 #sidebox:target {
@@ -121,6 +110,29 @@ form{
     margin-bottom: 30px;
 }
 
+/*    sidebox sur ecran smartphone    */
+@media screen and (max-width: 768px) {
+    #sidebox {
+        width: 100%;
+    }
+    
+    #sidebox a.fermer {
+        right: 0px !important;
+        top: 12px !important;
+        border-radius: 0px !important;
+    }
+    
+    #sidebox_clos:target #sidebox {
+        left: -100% !important;
+    }
+    
+    #sidebox a.ouvrir {
+        right: -50px !important;
+        top: 12px !important;
+    }
+}
+
+/*     chevauchement recherche tableau       */
 @media screen and (max-width: 992px) {
 	.dataTable {
 		margin-top: 20px;

@@ -1,106 +1,139 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Médiatic - Adhérent</title>
-		<!-- Script -->
-		<script src="bootstrap/js/jquery-1.12.1.min.js" type="text/javascript"></script>
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<!-- CSS -->
-		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/common.css">
-	</head>
-	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<!-- Menu -->
-				<nav class="navbar navbar-inverse">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-							</button>
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav col-sr-2 col-md-4">
-								<li class="linavbar">
-									<a href="media.html">Média</a>
-								</li>
-								<li class="linavbar">
-									<a href="adherent.html">Adhérent</a>
-								</li>
-							</ul>
-							<!-- right side of the navbar : login -->
-							<div class="col-sr-6 col-md-8 user-control">
-								<div class="navbar-text navbar-right ">
-									<span class="glyphicon glyphicon-user hidden-xs"></span> <a href="login.html" class="navbar-link">Mark Otto</a>
-									<a href="#" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
-								</div>
-							</div>
-						</div>
-						<!-- /.navbar-collapse -->
-					</div>
-					<!-- /.container-fluid -->
-				</nav>
-				<!-- End Menu -->
-				<main class="reduce">
-				<table class="table table-condensed table-bordered table-striped table-hover">
-					<thead>
-						<tr>
-							<th>Identifiant</th>
-							<th>Nom et prénom</th>
-							<th>Date de naissance</th>
-							<th>Livres empruntés</th>
-							<th>Cotisation à jour</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>17</td>
-							<td>John Doe</td>
-							<td>15/09/1986</td>
-							<td>2</td>
-							<td><input type="checkbox" checked disabled></td>
-						</tr>
-						<tr>
-							<td>1000</td>
-							<td>Jack Palmer</td>
-							<td>11/05/1978</td>
-							<td>4</td>
-							<td><input type="checkbox" unchecked disabled></td>
-						</tr>
-						<tr>
-							<td>13</td>
-							<td>Bob Smith</td>
-							<td>01/05/1945</td>
-							<td>7</td>
-							<td><input type="checkbox" checked disabled></td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="paginate">
-					<ul class="pagination">
-						<li>
-							<a href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li><a href="#">1</a></li>
-						<li class="active"><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li>
-							<a href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				</main>
-			</div>
-		</div>
-	</div>
+    <head>
+        <meta charset="utf-8">
+        <title>Médiatic - Adhérent</title>
+        <!-- Script -->
+        <script src="bootstrap/js/jquery-1.12.1.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/common.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!--sidebox-->
+                <div id="sidebox_clos">
+                    <div id="sidebox">
+                        <a href="#sidebox" class="ouvrir"><span class="glyphicon glyphicon-search"></span></a>
+                        <a href="#sidebox_clos" class="fermer"><span class="glyphicon glyphicon-search"></span></a>
+                        <form action="#" method="post" class="form-horizontal formsidebox">
+                            <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
+                            <div class="form-group">
+                                <label for="title" class="control-label col-md-1 hidden-xs">Titre</label>
+                                <div class="divinput col-sm-12">
+                                    <input type="text" name="title" id="title" placeholder="Titre" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="author" class="control-label col-md-1 hidden-xs">Auteur</label>
+                                <div class="divinput col-sm-12">
+                                    <input type="text" name="author" id="author" placeholder="Auteur" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-1 hidden-xs">Type</label>
+                                <div class="divinput col-sm-12 ">
+                                    <select name="type" class="form-control">
+                                        <option value="book">Livre</option>
+                                        <option value="cd">CD</option>
+                                        <option value="dvd">DVD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="submit" name="submit" value="Enregistrer" class="btn btn-success">
+                        </form>
+                    </div>
+                </div>
+                <!-- Menu -->
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav col-sr-2 col-md-4">
+                                <li class="linavbar">
+                                    <a href="media.html">Média</a>
+                                </li>
+                                <li class="linavbar">
+                                    <a href="adherent.html">Adhérent</a>
+                                </li>
+                            </ul>
+                            <!-- right side of the navbar : login -->
+                            <div class="col-sr-6 col-md-8 user-control">
+                                <div class="navbar-text navbar-right ">
+                                    <span class="glyphicon glyphicon-user hidden-xs"></span> <a href="login.html" class="navbar-link">Mark Otto</a>
+                                    <a href="#" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+                <!-- End Menu -->
+                <main class="reduce">
+                    <table class="table table-condensed table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Identifiant</th>
+                                <th>Nom et prénom</th>
+                                <th>Date de naissance</th>
+                                <th>Livres empruntés</th>
+                                <th>Cotisation à jour</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>17</td>
+                                <td>John Doe</td>
+                                <td>15/09/1986</td>
+                                <td>2</td>
+                                <td><input type="checkbox" checked disabled></td>
+                            </tr>
+                            <tr>
+                                <td>1000</td>
+                                <td>Jack Palmer</td>
+                                <td>11/05/1978</td>
+                                <td>4</td>
+                                <td><input type="checkbox" unchecked disabled></td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Bob Smith</td>
+                                <td>01/05/1945</td>
+                                <td>7</td>
+                                <td><input type="checkbox" checked disabled></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paginate">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

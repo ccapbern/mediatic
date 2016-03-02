@@ -1,6 +1,6 @@
 .reduce {
-	margin: auto;
-	padding: 10px;
+	margin: 0 20%;
+	padding: 10px 0;
 	width: 60%;
 }
 
@@ -43,7 +43,7 @@ input:required:focus {
 	padding-left: 0px;
 }
 .navbar {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 .navbar-inverse {
@@ -52,25 +52,29 @@ input:required:focus {
 }
 
 /*     sidebox       */
-#sidebox {
+.sidebox_clos {
     position: absolute;
-    left: -290px;
-    width: 290px;
+    left: -30%;
+    width: 30%;
     height: 100%;
     padding: 20px;
     background: #000000; 
     color: #fff;
-    -webkit-transition: all .5s ease-in;
-    transition: all .5s ease-in;
     z-index: 500;
 }
-
-#sidebox:target {
-    left: 0px;
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;
 }
 
-#sidebox a.ouvrir,
-#sidebox a.fermer {
+#sidebox_clos + #sidebox:target + .sidebox .sidebox_clos {
+    left: 0;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;
+}
+
+.sidebox a.ouvrir,
+.sidebox a.fermer {
     padding: 25px 10px;
     background: #000;
     color: #fff;
@@ -81,23 +85,23 @@ input:required:focus {
     border-radius: 0 8px 8px 0;
 }
 
-#sidebox a.fermer {
+.sidebox a.fermer {
     display: none;
 }
 
-#sidebox:target a.ouvrir {
+#sidebox:target + .sidebox a.ouvrir {
     display: none;
 }
 
-#sidebox:target a.fermer {
+#sidebox:target + .sidebox a.fermer {
     display: block;
 }
 
-#sidebox_clos:target #sidebox {
-    left: -290px;
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+    left: -30%;
 }
 
-#sidebox_clos #sidebox{
+.sidebox .sidebox_clos {
     position: fixed;
 }
 
@@ -109,23 +113,40 @@ input:required:focus {
     margin-bottom: 30px;
 }
 
+
+#sidebox:target + .sidebox + nav + .reduce {
+    margin-left : 35%;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#sidebox_clos:target + #sidebox + .sidebox + nav + .reduce {
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+/*#sidebox + nav + .reduce {
+    margin-left : 0 20%;
+}*/
+
+
 /*    sidebox sur ecran smartphone    */
 @media screen and (max-width: 768px) {
-    #sidebox {
+    .sidebox_clos {
         width: 100%;
     }
     
-    #sidebox a.fermer {
+    .sidebox a.fermer {
         right: 0px !important;
         top: 50px !important;
         border-radius: 0px !important;
     }
     
-    #sidebox_clos:target #sidebox {
+    #sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
         left: -100% !important;
     }
     
-    #sidebox a.ouvrir {
+    .sidebox_clos a.ouvrir {
         right: -34px !important;
         top: 150px !important;
     }

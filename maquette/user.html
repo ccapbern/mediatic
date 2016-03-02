@@ -14,8 +14,10 @@
         <div class="container-fluid">
             <div class="row">
                 <!--sidebox-->
-                <div id="sidebox_clos">
-                    <div id="sidebox">
+                <div id="sidebox_clos"></div>
+                <div id="sidebox"></div>
+                <div class="sidebox">
+                    <div class="sidebox_clos">
                         <a href="#sidebox" class="ouvrir"><span class="glyphicon glyphicon-search"></span></a>
                         <a href="#sidebox_clos" class="fermer"><span class="glyphicon glyphicon-search"></span></a>
                         <form action="#" method="post" class="form-horizontal formsidebox">
@@ -51,7 +53,7 @@
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                             </button>
                         </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -78,62 +80,61 @@
                 </nav>
                 <!-- End Menu -->
                 <main class="reduce">
-                    <table class="table table-condensed table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>Identifiant</th>
-                                <th>Nom et prénom</th>
-                                <th>Date de naissance</th>
-                                <th>Livres empruntés</th>
-                                <th>Cotisation à jour</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>17</td>
-                                <td>John Doe</td>
-                                <td>15/09/1986</td>
-                                <td>2</td>
-                                <td><input type="checkbox" checked disabled></td>
-                            </tr>
-                            <tr>
-                                <td>1000</td>
-                                <td>Jack Palmer</td>
-                                <td>11/05/1978</td>
-                                <td>4</td>
-                                <td><input type="checkbox" unchecked disabled></td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td>Bob Smith</td>
-                                <td>01/05/1945</td>
-                                <td>7</td>
-                                <td><input type="checkbox" checked disabled></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="paginate">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <table class="table table-condensed table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Nom et prénom</th>
+                            <th>Date de naissance</th>
+                            <th>Livres empruntés</th>
+                            <th>Cotisation à jour</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>17</td>
+                            <td>John Doe</td>
+                            <td>15/09/1986</td>
+                            <td>2</td>
+                            <td><input type="checkbox" checked disabled></td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>Jack Palmer</td>
+                            <td>11/05/1978</td>
+                            <td>4</td>
+                            <td><input type="checkbox" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Bob Smith</td>
+                            <td>01/05/1945</td>
+                            <td>7</td>
+                            <td><input type="checkbox" checked disabled></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="paginate">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 </main>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

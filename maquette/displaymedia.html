@@ -6,10 +6,10 @@
 		<!-- Script -->
 		<script src="bootstrap/js/jquery-1.12.1.min.js" type="text/javascript"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/common.js" type="text/javascript"></script>
 		<!-- CSS -->
 		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="">
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -47,26 +47,25 @@
 				<!-- End Menu -->
 				<main>
 				<div class="col-md-6">
-					
 					<form action="#" method="post" class="form-horizontal">
 						<fieldset>
 							<legend class="hidden-sm hidden-xs">Média</legend>
 							<div class="form-group">
 								<label for="title" class="control-label col-md-2 col-md-offset-2 hidden-xs">Titre</label>
 								<div class="col-md-7">
-									<input type="text" name="title" id="title" placeholder="Titre" class="form-control" required disabled>
+									<input type="text" name="title" id="title" placeholder="Titre" class="form-control inputDisabled" required disabled>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="author" class="control-label col-md-2 col-md-offset-2 hidden-xs">Auteur</label>
 								<div class="col-md-7">
-									<input type="text" name="author" id="author" placeholder="Auteur" class="form-control" required disabled>
+									<input type="text" name="author" id="author" placeholder="Auteur" class="form-control inputDisabled" required disabled>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="control-label col-md-2 col-md-offset-2 hidden-xs">Type</label>
 								<div class="col-md-7">
-									<select name="type" class="form-control" disabled>
+									<select name="type" class="form-control inputDisabled" disabled>
 										<option value="book">Livre</option>
 										<option value="cd">CD</option>
 										<option value="dvd">DVD</option>
@@ -76,7 +75,7 @@
 							<div class="form-group">
 								<label for="edit" class="control-label col-md-2 col-xs-1 col-md-offset-2">Édition</label>
 								<div class="col-md-offset-5 col-xs-offset-3">
-									<input type="checkbox" name="edit" value="edit" class="checkbox">
+									<input type="checkbox" name="edit" id="edit" class="checkbox">
 								</div>
 							</div>
 							<div class="col-md-offset-10">

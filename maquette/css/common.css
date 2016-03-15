@@ -1,46 +1,44 @@
 .reduce {
-	margin: 0 20%;
-	padding: 10px 0;
-	width: 60%;
+    margin: 0 20%;
+    padding: 10px 0;
+    width: 60%;
 }
 
 legend {
-	width: 20%;
-	margin-bottom: 50px;
-	border-bottom: none;
-	text-align: center;
+    width: 20%;
+    margin-bottom: 50px;
+    border-bottom: none;
+    text-align: center;
 }
 
 fieldset {
-	border: 1px solid #ccc;
-	padding: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 table, th, td{
-	text-align: center;
+    text-align: center;
 }
 
 .paginate {
-	text-align: center;
+    text-align: center;
 }
 
 input:required:focus {
-	border: 1px solid #ff8080;
+    border: 1px solid #ff8080;
+}
+
+.inputDisabled {
+    display: none;
 }
 
 .user-control {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-@media screen and (max-width: 768px) {
-	.reduce {
-		width: 100%;
-	}
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .user-control {
-	padding-left: 0px;
+    padding-left: 0px;
 }
 .navbar {
     margin-bottom: 10px;
@@ -52,7 +50,7 @@ input:required:focus {
 }
 
 .editOn {
-	display: none;
+    display: none;
 }
 
 /*     sidebox       */
@@ -136,20 +134,24 @@ input:required:focus {
 
 /*    sidebox sur ecran smartphone    */
 @media screen and (max-width: 768px) {
+    .reduce {
+        width: 100%;
+    }
+
     .sidebox_clos {
         width: 100%;
     }
-    
+
     .sidebox a.fermer {
         right: 0px !important;
         top: 50px !important;
         border-radius: 0px !important;
     }
-    
+
     #sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
         left: -100% !important;
     }
-    
+
     .sidebox_clos a.ouvrir {
         right: -34px !important;
         top: 150px !important;
@@ -158,8 +160,8 @@ input:required:focus {
 
 /*     chevauchement recherche tableau       */
 @media screen and (max-width: 992px) {
-	.dataTable {
-		margin-top: 20px;
-	}
+    .dataTable {
+        margin-top: 20px;
+    }
 
 }

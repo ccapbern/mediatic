@@ -1,5 +1,167 @@
 package org.dta.model;
 
-public class Member {
-    
+import com.sun.istack.internal.NotNull;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "member")
+public class Member implements Serializable {
+
+    @Id
+    @SequenceGenerator(name = "member_id_sequence", sequenceName = "member_id_sequence", allocationSize = 1)
+    @GeneratedValue(generator = "member_id_sequence")
+    private Long id;
+    @NotNull
+    private String lastname;
+    @NotNull
+    private String firstname;
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date dob;
+    @NotNull
+    private String email;
+    private String address;
+    private String city;
+    @Temporal(TemporalType.DATE)
+    private Date subscription_date;
+    @Temporal(TemporalType.DATE)
+    private Date subscription_amount;
+    @OneToMany(mappedBy = "member_id")
+    private List<Borrow> borrow;
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @return the lastname
+     */
+    public String getLastname() {
+        return lastname;
+    }
+
+    /**
+     * @param lastname the lastname to set
+     */
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    /**
+     * @return the firstname
+     */
+    public String getFirstname() {
+        return firstname;
+    }
+
+    /**
+     * @param firstname the firstname to set
+     */
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    /**
+     * @return the dob
+     */
+    public Date getDob() {
+        return dob;
+    }
+
+    /**
+     * @param dob the dob to set
+     */
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * @return the city
+     */
+    public String getCity() {
+        return city;
+    }
+
+    /**
+     * @param city the city to set
+     */
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    /**
+     * @return the subscription_date
+     */
+    public Date getSubscription_date() {
+        return subscription_date;
+    }
+
+    /**
+     * @param subscription_date the subscription_date to set
+     */
+    public void setSubscription_date(Date subscription_date) {
+        this.subscription_date = subscription_date;
+    }
+
+    /**
+     * @return the subscription_amount
+     */
+    public Date getSubscription_amount() {
+        return subscription_amount;
+    }
+
+    /**
+     * @param subscription_amount the subscription_amount to set
+     */
+    public void setSubscription_amount(Date subscription_amount) {
+        this.subscription_amount = subscription_amount;
+    }
+
+    /**
+     * @return the borrow
+     */
+    public List<Borrow> getBorrow() {
+        return borrow;
+    }
 }

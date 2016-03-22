@@ -1,6 +1,8 @@
 package org.dta.dao;
 
+import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import org.dta.model.Members;
 
 public class MembersDAO {
@@ -46,5 +48,29 @@ public class MembersDAO {
         DatabaseHelper.beginTx(entityManager);
         entityManager.remove(entityManager.find(Members.class, id));
         DatabaseHelper.commitTxAndClose(entityManager);
+    }
+
+    public List<Members> getMembersById(Long id) {
+        String sql = "select m "
+                + "from Members m "
+                + "where m.id like :id";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Members.class);
+        query.setParameter("id", id + '%');
+
+        return query.getResultList();
+    }
+
+    public List<Members> getMembersByName(String name) {
+        String sql = "select m "
+                + "from Members m "
+                + "where m.lastname like :name";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Members.class);
+        query.setParameter("name", "%" + name + "%");
+
+        return query.getResultList();
     }
 }

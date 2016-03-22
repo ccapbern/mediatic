@@ -1,6 +1,5 @@
 package org.dta.model;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -12,10 +11,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "member")
-public class Member implements Serializable {
+@Table(name = "members")
+public class Members implements Serializable {
 
     @Id
     @SequenceGenerator(name = "member_id_sequence", sequenceName = "member_id_sequence", allocationSize = 1)

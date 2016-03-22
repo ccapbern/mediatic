@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="medias")
-public class Media {
+public class Medias {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -12,11 +12,11 @@ public class Media {
 	private String author;
 	private Long type_id;
 	
-	public Media(){
+	public Medias(){
 		
 	}
 	
-	public Media(Long id, String title, String author, Long type_id){
+	public Medias(Long id, String title, String author, Long type_id){
 		this.id = id;
 		this.title = title;
 		this.author = author;

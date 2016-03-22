@@ -1,6 +1,5 @@
 package org.dta.model;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
@@ -10,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "borrow")
@@ -20,11 +20,10 @@ public class Borrow implements Serializable {
     private Long id;
     @NotNull
     @ManyToOne
-    private Member member_id;
+    private Members member_id;
     @NotNull
     @ManyToOne
-    private Media media_id;
-    @NotNull
+    private Medias media_id;
     @Temporal(TemporalType.DATE)
     private Date borrowing_date;
 
@@ -38,28 +37,28 @@ public class Borrow implements Serializable {
     /**
      * @return the member_id
      */
-    public Member getMember_id() {
+    public Members getMember_id() {
         return member_id;
     }
 
     /**
      * @param member_id the member_id to set
      */
-    public void setMember_id(Member member_id) {
+    public void setMember_id(Members member_id) {
         this.member_id = member_id;
     }
 
     /**
      * @return the media_id
      */
-    public Media getMedia_id() {
+    public Medias getMedia_id() {
         return media_id;
     }
 
     /**
      * @param media_id the member_id to set
      */
-    public void setMedia_id(Media media_id) {
+    public void setMedia_id(Medias media_id) {
         this.media_id = media_id;
     }
 

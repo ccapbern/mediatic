@@ -1,8 +1,13 @@
 package org.dta.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import org.dta.model.Medias;
+import org.dta.model.Members;
+import org.dta.model.Type;
 
 public class MediasDAO {
 
@@ -46,5 +51,41 @@ public class MediasDAO {
         DatabaseHelper.beginTx(entityManager);
         entityManager.remove(entityManager.find(Medias.class, id));
         DatabaseHelper.commitTxAndClose(entityManager);
+    }
+    
+    public List<Medias> getMediasByTitle(String title) {
+        String sql = "select m "
+                + "from Medias m "
+                + "where m.title like :title";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Medias.class);
+        query.setParameter("title", "%" + title + "%");
+
+        return query.getResultList();
+    }
+    
+    public List<Medias> getMediasByAuthor(String author) {
+        String sql = "select m "
+                + "from Medias m "
+                + "where m.author like :author";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Medias.class);
+        query.setParameter("author", "%" + author + "%");
+
+        return query.getResultList();
+    }
+    
+    public List<Medias> getMediasByType(Type type_id) {
+        String sql = "select m "
+                + "from Medias m "
+                + "where m.type_id = :type_id";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Medias.class);
+        query.setParameter("type_id", type_id);
+
+        return query.getResultList();
     }
 }

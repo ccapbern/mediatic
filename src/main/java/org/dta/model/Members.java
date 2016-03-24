@@ -1,6 +1,7 @@
 package org.dta.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
@@ -11,7 +12,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+import org.dta.utils.CalendarUtil;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
@@ -38,6 +41,8 @@ public class Members implements Serializable {
     private Integer subscription_amount;
     @OneToMany(mappedBy = "member_id")
     private List<Borrow> borrow;
+    @Transient
+    private Integer age;
 
     public Members() {
     }
@@ -49,6 +54,7 @@ public class Members implements Serializable {
         this.email = email.trim();
     }
 
+    @Override
     public String toString() {
         return this.firstname + " " + this.lastname;
     }
@@ -177,5 +183,24 @@ public class Members implements Serializable {
      */
     public List<Borrow> getBorrow() {
         return borrow;
+    }
+
+    /**
+     * @return the age
+     */
+    public Integer getAge() {
+        Integer age = 0;
+        Calendar dob = CalendarUtil.getCalendar(this.dob);
+        Calendar now = CalendarUtil.getCalendar(new Date());
+
+        age = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+
+        if (dob.get(Calendar.MONTH) > now.get(Calendar.MONTH)
+                || (dob.get(Calendar.MONTH) == now.get(Calendar.MONTH)
+                && dob.get(Calendar.DATE) > now.get(Calendar.DATE))) {
+            age--;
+        }
+
+        return age;
     }
 }

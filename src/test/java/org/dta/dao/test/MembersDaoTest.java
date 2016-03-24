@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.dta.dao.MembersDAO;
 import org.dta.model.Members;
-import org.hamcrest.core.IsEqual;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,13 +17,13 @@ import static org.junit.Assert.*;
  *
  * @author utilisateur
  */
-public class MembersUnitTest {
+public class MembersDaoTest {
 
     private static SimpleDateFormat sdf;
     private static MembersDAO dao;
     private static List<Members> members;
 
-    public MembersUnitTest() {
+    public MembersDaoTest() {
     }
 
     @BeforeClass
@@ -42,10 +41,19 @@ public class MembersUnitTest {
         members.add(m2);
         members.add(m3);
         members.add(m4);
+
+        for (Members m : members) {
+            dao.persist(m);
+        }
     }
 
     @AfterClass
     public static void tearDownClass() {
+        List<Members> mList = dao.getMembersByName("");
+
+        for (Members m : mList) {
+            dao.remove(m.getId());
+        }
     }
 
     @Before
@@ -57,27 +65,35 @@ public class MembersUnitTest {
     }
 
     @Test
-    public void crud() {
+    public void findAll() {
+        List<Members> mList = dao.getMembersByName("");
 
-        // Persist
-        for (Members m : members) {
-            dao.persist(m);
-        }
+        assertEquals(mList.size(), 4);
 
-        assertThat(members.get(0).toString(), IsEqual.equalTo("John DOE"));
-        assertThat(dao.getMembersByName("").size(), IsEqual.equalTo(4));
+        Members m = mList.get(3);
+        dao.remove(m.getId());
+        mList = dao.getMembersByName("");
 
-        // Update
-        Members m = members.get(0);
+        assertEquals(mList.size(), 3);
+        assertNull(dao.find(m.getId()));
+    }
+
+    @Test
+    public void find() {
+        List<Members> mList = dao.getMembersByName("doe");
+
+        assertEquals(mList.size(), 1);
+        assertEquals(mList.get(0).toString(), "John DOE");
+    }
+
+    @Test
+    public void update() {
+        List<Members> mList = dao.getMembersByName("doe");
+        Members m = mList.get(0);
+
         m.setAddress("Unknown");
         dao.merge(m);
 
-        assertThat(dao.find(m.getId()).getAddress(), IsEqual.equalTo("Unknown"));
-
-        // Remove
-        dao.remove(m.getId());
-
-        assertThat(dao.find(m.getId()), IsEqual.equalTo(null));
-        assertThat(dao.getMembersByName("").size(), IsEqual.equalTo(3));
+        assertEquals(dao.find(m.getId()).getAddress(), "Unknown");
     }
 }

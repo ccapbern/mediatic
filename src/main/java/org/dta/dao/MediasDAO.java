@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import org.dta.model.Medias;
-import org.dta.model.Members;
 import org.dta.model.Type;
 
 public class MediasDAO {

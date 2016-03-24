@@ -77,9 +77,9 @@ public class MembersDAO {
     public List<Medias> getAllMedias(Members member) {
         String sql = "select me "
                 + "from Members m "
-                + "join Borrow b me ON m.id=b.member_id "
-                + "join Medias me On me.id=b.media_id"
-                + "where m.id like :id";
+                + "join m.borrow b "
+                + "join  b.media me "
+                + "where m.id=:id";
         EntityManager entityManager = DatabaseHelper.createEntityManager();
 
         TypedQuery query = entityManager.createQuery(sql, Medias.class);

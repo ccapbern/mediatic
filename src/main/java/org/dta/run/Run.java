@@ -2,7 +2,9 @@ package org.dta.run;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import org.dta.dao.MembersDAO;
+import org.dta.model.Medias;
 import org.dta.model.Members;
 
 public class Run {
@@ -30,5 +32,6 @@ public class Run {
         System.out.println(membersDAO.find(m1.getId()).getAddress());
 
         System.out.println(m3.getAge());
-    }   
+        List<Medias> mList = membersDAO.getAllMedias(m4);
+    }
 }

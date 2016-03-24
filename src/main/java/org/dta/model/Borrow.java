@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -22,10 +23,12 @@ public class Borrow implements Serializable {
     private Long id;
     @NotNull
     @ManyToOne
-    private Members member_id;
+    @JoinColumn(name = "member_id")
+    private Members member;
     @NotNull
     @ManyToOne
-    private Medias media_id;
+    @JoinColumn(name = "media_id")
+    private Medias media;
     @NotNull
     @Temporal(TemporalType.DATE)
     private Date borrowing_date;
@@ -42,29 +45,29 @@ public class Borrow implements Serializable {
     /**
      * @return the member_id
      */
-    public Members getMember_id() {
-        return member_id;
+    public Members getMember() {
+        return member;
     }
 
     /**
-     * @param member_id the member_id to set
+     * @param member the member_id to set
      */
-    public void setMember_id(Members member_id) {
-        this.member_id = member_id;
+    public void setMember(Members member) {
+        this.member = member;
     }
 
     /**
      * @return the media_id
      */
-    public Medias getMedia_id() {
-        return media_id;
+    public Medias getMedia() {
+        return media;
     }
 
     /**
-     * @param media_id the member_id to set
+     * @param media the member_id to set
      */
-    public void setMedia_id(Medias media_id) {
-        this.media_id = media_id;
+    public void setMedia(Medias media) {
+        this.media = media;
     }
 
     /**

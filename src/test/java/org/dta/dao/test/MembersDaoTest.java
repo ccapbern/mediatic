@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import org.dta.dao.MembersDAO;
+import org.dta.model.Medias;
 import org.dta.model.Members;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -95,5 +96,15 @@ public class MembersDaoTest {
         dao.merge(m);
 
         assertEquals(dao.find(m.getId()).getAddress(), "Unknown");
+    }
+    
+    @Test
+    public void findAllMedias() {
+        List<Members> mList = dao.getMembersByName("");
+        Members m = mList.get(0);
+        
+        List<Medias> mediaList = dao.getAllMedias(m);
+        
+        assertEquals(mediaList.size(), 0);
     }
 }

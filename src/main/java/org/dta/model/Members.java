@@ -39,7 +39,7 @@ public class Members implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date subscription_date;
     private Integer subscription_amount;
-    @OneToMany(mappedBy = "member_id")
+    @OneToMany(mappedBy = "member")
     private List<Borrow> borrow;
     @Transient
     private Integer age;

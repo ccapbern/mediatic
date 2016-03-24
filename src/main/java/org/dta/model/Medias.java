@@ -18,17 +18,17 @@ public class Medias {
     private String author;
     @NotNull
     @ManyToOne
-    private Type type_id;
+    private Type type;
 
     public Medias() {
 
     }
 
-    public Medias(Long id, String title, String author, Type type_id) {
+    public Medias(Long id, String title, String author, Type type) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.type_id = type_id;
+        this.type = type;
     }
 
     public Long getId() {
@@ -55,12 +55,12 @@ public class Medias {
         this.author = author;
     }
 
-    public Type getType_id() {
-        return type_id;
+    public Type getType() {
+        return type;
     }
 
-    public void setType_id(Type type_id) {
-        this.type_id = type_id;
+    public void setType(Type type) {
+        this.type = type;
     }
 
 }

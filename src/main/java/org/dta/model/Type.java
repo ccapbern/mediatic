@@ -14,7 +14,7 @@ public class Type {
     private Long id;
     @NotBlank
     private String name;
-    @OneToMany(mappedBy = "type_id")
+    @OneToMany(mappedBy = "type")
     private List<Medias> medias;
 
     public Type() {

@@ -76,14 +76,14 @@ public class MediasDAO {
         return query.getResultList();
     }
     
-    public List<Medias> getMediasByType(Type type_id) {
+    public List<Medias> getMediasByType(Type type) {
         String sql = "select m "
                 + "from Medias m "
                 + "where m.type_id = :type_id";
         EntityManager entityManager = DatabaseHelper.createEntityManager();
 
         TypedQuery query = entityManager.createQuery(sql, Medias.class);
-        query.setParameter("type_id", type_id);
+        query.setParameter("type_id", type.getId());
 
         return query.getResultList();
     }

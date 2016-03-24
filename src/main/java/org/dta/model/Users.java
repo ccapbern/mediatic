@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name="users")
@@ -16,8 +17,11 @@ public class Users implements Serializable {
     @SequenceGenerator(name="users_id_sequence", sequenceName = "users_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "users_id_sequence")
     private Long id;
+    @NotBlank
     private String login;
+    @NotBlank
     private String password;
+    @NotBlank
     private String email;
     private boolean authorize;
     

@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "members")
@@ -21,14 +21,14 @@ public class Members implements Serializable {
     @SequenceGenerator(name = "member_id_sequence", sequenceName = "member_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "member_id_sequence")
     private Long id;
-    @NotNull
+    @NotBlank
     private String lastname;
-    @NotNull
+    @NotBlank
     private String firstname;
-    @NotNull
+    @NotBlank
     @Temporal(TemporalType.DATE)
     private Date dob;
-    @NotNull
+    @NotBlank
     private String email;
     private String address;
     private String city;

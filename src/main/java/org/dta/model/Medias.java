@@ -1,7 +1,7 @@
 package org.dta.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "medias")
@@ -11,11 +11,11 @@ public class Medias {
     @SequenceGenerator(name = "medias_id_sequence", sequenceName = "medias_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "medias_id_sequence")
     private Long id;
-    @NotNull
+    @NotBlank
     private String title;
-    @NotNull
+    @NotBlank
     private String author;
-    @NotNull
+    @NotBlank
     @ManyToOne
     private Type type_id;
 

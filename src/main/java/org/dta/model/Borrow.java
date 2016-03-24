@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Borrow implements Serializable {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "borrow_id_sequence", sequenceName = "borrow_id_sequence", allocationSize = 1)
+    @GeneratedValue(generator = "borrow_id_sequence")
     private Long id;
     @NotNull
     @ManyToOne
@@ -26,6 +28,8 @@ public class Borrow implements Serializable {
     private Medias media_id;
     @Temporal(TemporalType.DATE)
     private Date borrowing_date;
+    @Temporal(TemporalType.DATE)
+    private Date return_date;
 
     /**
      * @return the id
@@ -74,5 +78,19 @@ public class Borrow implements Serializable {
      */
     public void setBorrowing_date(Date borrowing_date) {
         this.borrowing_date = borrowing_date;
+    }
+
+    /**
+     * @return the return_date
+     */
+    public Date getReturn_date() {
+        return return_date;
+    }
+
+    /**
+     * @param return_date the return_date to set
+     */
+    public void setReturn_date(Date return_date) {
+        this.return_date = return_date;
     }
 }

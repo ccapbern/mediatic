@@ -2,7 +2,7 @@ package org.dta.model;
 
 import java.util.List;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "types")
@@ -12,7 +12,7 @@ public class Type {
     @SequenceGenerator(name = "type_id_sequence", sequenceName = "type_id_sequence", allocationSize = 1)
     @GeneratedValue(generator = "type_id_sequence")
     private Long id;
-    @NotNull
+    @NotBlank
     private String name;
     @OneToMany(mappedBy = "type_id")
     private List<Medias> medias;

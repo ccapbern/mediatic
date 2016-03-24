@@ -18,6 +18,7 @@ public class Medias {
     private String author;
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "type_id")
     private Type type;
 
     public Medias() {

@@ -79,7 +79,7 @@ public class MediasDAO {
     public List<Medias> getMediasByType(Type type) {
         String sql = "select m "
                 + "from Medias m "
-                + "where m.type_id = :type_id";
+                + "where m.type.id = :type_id";
         EntityManager entityManager = DatabaseHelper.createEntityManager();
 
         TypedQuery query = entityManager.createQuery(sql, Medias.class);

@@ -13,7 +13,7 @@ public class Run {
         MembersDAO membersDAO = MembersDAO.instance();
 
         Members m1 = new Members("Doe", "John", sdf.parse("01/01/1970"), "john.doe@unknown.com");
-        Members m2 = new Members("Dupond", "Jean", sdf.parse("01/01/1970"), "j.dupond@unknown.com");
+        Members m2 = new Members("Dupond", "Jean", sdf.parse("29/05/1980"), "j.dupond@unknown.com");
         Members m3 = new Members("Dupont", "Bernard", sdf.parse("25/03/1986"), "b.dupont@unknown.com");
         Members m4 = new Members("Leblanc", "Juste", sdf.parse("31/12/1985"), "juste.leblanc@unknown.com");
         membersDAO.persist(m1);

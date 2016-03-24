@@ -3,6 +3,7 @@ package org.dta.dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import org.dta.model.Medias;
 import org.dta.model.Members;
 
 public class MembersDAO {
@@ -69,6 +70,20 @@ public class MembersDAO {
 
         TypedQuery query = entityManager.createQuery(sql, Members.class);
         query.setParameter("name", "%" + name.toUpperCase() + "%");
+
+        return query.getResultList();
+    }
+
+    public List<Medias> getAllMedias(Members member) {
+        String sql = "select me "
+                + "from Members m "
+                + "join Borrow b me ON m.id=b.member_id "
+                + "join Medias me On me.id=b.media_id"
+                + "where m.id like :id";
+        EntityManager entityManager = DatabaseHelper.createEntityManager();
+
+        TypedQuery query = entityManager.createQuery(sql, Medias.class);
+        query.setParameter("id", member.getId());
 
         return query.getResultList();
     }

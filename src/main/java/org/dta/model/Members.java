@@ -52,6 +52,7 @@ public class Members implements Serializable {
         this.firstname = firstname.trim();
         this.dob = dob;
         this.email = email.trim();
+        this.age = getAge();
     }
 
     @Override
@@ -189,15 +190,15 @@ public class Members implements Serializable {
      * @return the age
      */
     public Integer getAge() {
-        Integer age = 0;
-        Calendar dob = CalendarUtil.getCalendar(this.dob);
+        age = 0;
+        Calendar birth = CalendarUtil.getCalendar(this.dob);
         Calendar now = CalendarUtil.getCalendar(new Date());
 
-        age = now.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        age = now.get(Calendar.YEAR) - birth.get(Calendar.YEAR);
 
-        if (dob.get(Calendar.MONTH) > now.get(Calendar.MONTH)
-                || (dob.get(Calendar.MONTH) == now.get(Calendar.MONTH)
-                && dob.get(Calendar.DATE) > now.get(Calendar.DATE))) {
+        if (birth.get(Calendar.MONTH) > now.get(Calendar.MONTH)
+                || (birth.get(Calendar.MONTH) == now.get(Calendar.MONTH)
+                && birth.get(Calendar.DATE) > now.get(Calendar.DATE))) {
             age--;
         }
 

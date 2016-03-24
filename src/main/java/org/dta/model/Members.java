@@ -11,6 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
@@ -25,7 +26,7 @@ public class Members implements Serializable {
     private String lastname;
     @NotBlank
     private String firstname;
-    @NotBlank
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date dob;
     @NotBlank
@@ -34,10 +35,23 @@ public class Members implements Serializable {
     private String city;
     @Temporal(TemporalType.DATE)
     private Date subscription_date;
-    @Temporal(TemporalType.DATE)
-    private Date subscription_amount;
+    private Integer subscription_amount;
     @OneToMany(mappedBy = "member_id")
     private List<Borrow> borrow;
+
+    public Members() {
+    }
+
+    public Members(String lastname, String firstname, Date dob, String email) {
+        this.lastname = lastname.toUpperCase().trim();
+        this.firstname = firstname.trim();
+        this.dob = dob;
+        this.email = email.trim();
+    }
+
+    public String toString() {
+        return this.firstname + " " + this.lastname;
+    }
 
     /**
      * @return the id
@@ -57,7 +71,7 @@ public class Members implements Serializable {
      * @param lastname the lastname to set
      */
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastname = lastname.toUpperCase().trim();
     }
 
     /**
@@ -71,7 +85,7 @@ public class Members implements Serializable {
      * @param firstname the firstname to set
      */
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstname = firstname.trim();
     }
 
     /**
@@ -99,7 +113,7 @@ public class Members implements Serializable {
      * @param email the email to set
      */
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email.trim();
     }
 
     /**
@@ -113,7 +127,7 @@ public class Members implements Serializable {
      * @param address the address to set
      */
     public void setAddress(String address) {
-        this.address = address;
+        this.address = address.trim();
     }
 
     /**
@@ -127,7 +141,7 @@ public class Members implements Serializable {
      * @param city the city to set
      */
     public void setCity(String city) {
-        this.city = city;
+        this.city = city.trim();
     }
 
     /**
@@ -147,14 +161,14 @@ public class Members implements Serializable {
     /**
      * @return the subscription_amount
      */
-    public Date getSubscription_amount() {
+    public Integer getSubscription_amount() {
         return subscription_amount;
     }
 
     /**
      * @param subscription_amount the subscription_amount to set
      */
-    public void setSubscription_amount(Date subscription_amount) {
+    public void setSubscription_amount(Integer subscription_amount) {
         this.subscription_amount = subscription_amount;
     }
 

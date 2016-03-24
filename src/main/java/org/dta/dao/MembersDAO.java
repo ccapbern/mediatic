@@ -9,8 +9,7 @@ public class MembersDAO {
 
     private static MembersDAO dao;
 
-    public MembersDAO() {
-
+    private MembersDAO() {
     }
 
     public static MembersDAO instance() {
@@ -69,7 +68,7 @@ public class MembersDAO {
         EntityManager entityManager = DatabaseHelper.createEntityManager();
 
         TypedQuery query = entityManager.createQuery(sql, Members.class);
-        query.setParameter("name", "%" + name + "%");
+        query.setParameter("name", "%" + name.toUpperCase() + "%");
 
         return query.getResultList();
     }

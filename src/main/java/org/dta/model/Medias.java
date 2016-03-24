@@ -1,6 +1,7 @@
 package org.dta.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
@@ -15,7 +16,7 @@ public class Medias {
     private String title;
     @NotBlank
     private String author;
-    @NotBlank
+    @NotNull
     @ManyToOne
     private Type type_id;
 

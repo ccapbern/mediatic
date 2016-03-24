@@ -6,9 +6,9 @@ import org.dta.model.Users;
 public class UsersDAO {
 
     private static UsersDAO dao;
-    
+
     public static UsersDAO instance() {
-    if (dao == null) {
+        if (dao == null) {
             dao = new UsersDAO();
         }
         return dao;
@@ -16,7 +16,7 @@ public class UsersDAO {
 
     private UsersDAO() {
     }
-    
+
     public Users find(Long id) {
         EntityManager entityManager = DatabaseHelper.createEntityManager();
         Users users = entityManager.find(Users.class, id);

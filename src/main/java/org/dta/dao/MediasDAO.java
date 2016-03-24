@@ -5,19 +5,18 @@ import javax.persistence.EntityManager;
 import org.dta.model.Medias;
 
 public class MediasDAO {
-	private static MediasDAO dao;
-	
-	public MediasDAO(){
-		
-	}
-	
-	public static MediasDAO instance() {
+
+    private static MediasDAO dao;
+
+    private MediasDAO() {
+    }
+
+    public static MediasDAO instance() {
         if (dao == null) {
             dao = new MediasDAO();
         }
         return dao;
     }
-	
 
     public Medias find(Long id) {
         EntityManager entityManager = DatabaseHelper.createEntityManager();

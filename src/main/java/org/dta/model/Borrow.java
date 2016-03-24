@@ -26,6 +26,7 @@ public class Borrow implements Serializable {
     @NotNull
     @ManyToOne
     private Medias media_id;
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date borrowing_date;
     @Temporal(TemporalType.DATE)

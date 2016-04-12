@@ -18,10 +18,13 @@
 <script src="app.js"></script>
 <script src="module-menu/js/Menu.js"></script>
 <script src="module-menu/js/controller/MenuController.js"></script>
+<script src="module-sidebar/js/Sidebar.js"></script>
+<script src="module-sidebar/js/controller/SidebarController.js"></script>
 <script src="module-media/js/media.js"></script>
 <script src="module-media/js/controller/MediaController.js"></script>
 <script src="module-media/js/service/MediaService.js"></script>
 <script src="module-media/js/directive/myType.js"></script>
+<script src="module-adherent/js/adherent.js"></script>
 
 
 <!-- Chargement de BOOTSTRAP-->
@@ -40,7 +43,8 @@
 </head>
 <body>
         <div ng-include="'module-menu/templates/menu.html'"></div>
-	<!-- Zone visée par ngRoute-->
+	<div ng-include="'module-sidebar/templates/sidebar.html'"></div>
+        <!-- Zone visée par ngRoute-->
 	<ng-view></ng-view>
 </body>
 </html>

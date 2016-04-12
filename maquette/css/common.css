@@ -40,14 +40,8 @@ input:required:focus {
 .user-control {
     padding-left: 0px;
 }
-
-.editOn {
-    display: none;
-}
-
-/*        Navbar           */
 .navbar {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 .navbar-inverse {
@@ -55,8 +49,12 @@ input:required:focus {
     z-index: 1000;
 }
 
+.editOn {
+    display: none;
+}
+
 /*     sidebox       */
-.sidebox {
+.sidebox_clos {
     position: absolute;
     left: -30%;
     width: 30%;
@@ -65,22 +63,48 @@ input:required:focus {
     background: #000000; 
     color: #fff;
     z-index: 500;
+}
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
     -webkit-transition: left .5s ease-in;
     transition: left .5s ease-in;
 }
 
-.sidebox.sidebox_open {
+#sidebox_clos + #sidebox:target + .sidebox .sidebox_clos {
     left: 0;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;
 }
 
-.sidebox button {
+.sidebox a.ouvrir,
+.sidebox a.fermer {
     padding: 25px 10px;
     background: #000;
     color: #fff;
+    text-decoration: none;
     position: absolute;
     right: -34px;
     top: 150px;
     border-radius: 0 8px 8px 0;
+}
+
+.sidebox a.fermer {
+    display: none;
+}
+
+#sidebox:target + .sidebox a.ouvrir {
+    display: none;
+}
+
+#sidebox:target + .sidebox a.fermer {
+    display: block;
+}
+
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+    left: -30%;
+}
+
+.sidebox .sidebox_clos {
+    position: fixed;
 }
 
 .formsidebox{
@@ -91,26 +115,46 @@ input:required:focus {
     margin-bottom: 30px;
 }
 
+
+#sidebox:target + .sidebox + nav + .reduce {
+    margin-left : 35%;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#sidebox_clos:target + #sidebox + .sidebox + nav + .reduce {
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+/*#sidebox + nav + .reduce {
+    margin-left : 0 20%;
+}*/
+
+
 /*    sidebox sur ecran smartphone    */
 @media screen and (max-width: 768px) {
     .reduce {
         width: 100%;
     }
 
-    .sidebox_open{
+    .sidebox_clos {
         width: 100%;
     }
 
-    .sidebox button {
+    .sidebox a.fermer {
         right: 0px !important;
         top: 50px !important;
         border-radius: 0px !important;
     }
-    
-    .sidebox_open button {
+
+    #sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+        left: -100% !important;
+    }
+
+    .sidebox_clos a.ouvrir {
         right: -34px !important;
         top: 150px !important;
-        border-radius: 0px !important;
     }
 }
 

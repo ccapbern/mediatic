@@ -1,6 +1,7 @@
 # Project
 maquette/node_modules/
 maquette/app/bower_components/
+*.log
 
 # Eclipse specific
 /target/

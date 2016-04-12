@@ -1,12 +1,13 @@
 
-// Création du module app avec les dépendances :
-//  - ng-route : pour gérer des URL différentes
-angular.module('app', ['ngRoute', 'ModuleMenu']);
+// CrÃ©ation du module app avec les dÃ©pendances :
+//  - ng-route : pour gÃ©rer des URL diffÃ©rentes
+
+angular.module('App', ['ngRoute', 'ModuleMedia','ModuleMenu']);
 
 // Configuration du module app
 // => Injection du Provider du service $route afin de le configurer.
-angular.module('app').config(function($routeProvider){
-		$routeProvider.otherwise({
-			redirectTo : '/media'
-		});
+angular.module('App').config(function ($routeProvider) {
+    $routeProvider.otherwise({
+        redirectTo: '/media'
+    });
 });

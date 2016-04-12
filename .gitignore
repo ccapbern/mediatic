@@ -1,3 +1,7 @@
+# Project
+maquette/node_modules/
+maquette/bower_components/
+
 # Eclipse specific
 /target/
 .classpath

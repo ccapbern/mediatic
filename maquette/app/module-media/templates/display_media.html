@@ -7,34 +7,34 @@
                     <div class="form-group">
                         <label for="title" class="control-label col-md-2 col-md-offset-2 hidden-xs">Titre</label>
                         <div class="col-md-7 editFields">
-                            <input ng-model="mediaCtrl.media.titre" type="text" name="title" id="title" placeholder="Titre" value="Titre" class="form-control inputDisabled" required>
-                            <label class="control-label labelDisabled" ng-bind="mediaCtrl.media.titre"></label>
+                            <input ng-model="mediaCtrl.media.titre" type="text" name="title" id="title" placeholder="Titre" value="Titre" class="form-control"  ng-show="edit" required>
+                            <label class="control-label" ng-bind="mediaCtrl.media.titre" ng-show="!edit"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="author" class="control-label col-md-2 col-md-offset-2 hidden-xs">Auteur</label>
                         <div class="col-md-7 editFields">
-                            <input ng-model="mediaCtrl.media.auteur" type="text" name="author" id="author" placeholder="Auteur" value="Auteur" class="form-control inputDisabled" required>
-                            <label class="control-label labelDisabled" ng-bind="mediaCtrl.media.auteur"></label>
+                            <input ng-model="mediaCtrl.media.auteur" type="text" name="author" id="author" placeholder="Auteur" value="Auteur" class="form-control"  ng-show="edit" required>
+                            <label class="control-label" ng-bind="mediaCtrl.media.auteur" ng-show="!edit"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2 col-md-offset-2 hidden-xs">Type</label>
                         <div class="col-md-7 editFields">
-                            <select ng-model="mediaCtrl.media.type" name="type" class="form-control inputDisabled">
+                            <select ng-model="mediaCtrl.media.type" name="type" class="form-control" ng-show="edit">
                                 <option value="Livre">Livre</option>
                                 <option value="CD">CD</option>
                                 <option value="DVD">DVD</option>
                             </select>
-                            <label class="control-label labelDisabled" ng-bind="mediaCtrl.media.type"></label>
+                            <label class="control-label" ng-bind="mediaCtrl.media.type" ng-show="!edit"></label>
                         </div>
                     </div>
-                    <div class="col-md-offset-10 editOff">
-                        <button type="button" class="btn btn-success edit">Éditer</button>
+                    <div class="col-md-offset-10"  ng-show="!edit">
+                        <button type="button" class="btn btn-success edit" ng-click="edit = true">Editer</button>
                     </div>
-                    <div class="col-md-offset-8 editOn">
-                        <button type="button" class="btn btn-success save">Modifier</button>
-                        <button type="button" class="btn btn-danger cancel">Annuler</button>
+                    <div class="col-md-offset-8"  ng-show="edit">
+                        <button type="button" class="btn btn-success save"  ng-click="edit = false">Modifier</button>
+                        <button type="button" class="btn btn-danger cancel" ng-click="edit = false">Annuler</button>
                     </div>
                 </fieldset>
             </form>

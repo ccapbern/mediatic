@@ -1,7 +1,7 @@
 
 // Création du module app avec les dépendances :
 //  - ng-route : pour gérer des URL différentes
-angular.module('app', ['ngRoute']);
+angular.module('app', ['ngRoute', 'ModuleMenu']);
 
 // Configuration du module app
 // => Injection du Provider du service $route afin de le configurer.

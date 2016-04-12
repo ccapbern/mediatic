@@ -1,6 +1,6 @@
 # Project
 maquette/node_modules/
-maquette/bower_components/
+maquette/app/bower_components/
 
 # Eclipse specific
 /target/

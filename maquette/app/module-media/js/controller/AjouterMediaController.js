@@ -9,6 +9,6 @@ angular.module('ModuleMedia').controller('AjouterMediaController', ['$rootScope'
         myCtrl.addMedia = function () {
             MediaService.addMedia(myCtrl.ajout);
             myCtrl.ajout = {};
-//            $location.path("/media");
+            $location.path("/media");
         };
     }]);

@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- Déclaration du module principal de l'application-->
-<html ng-app>
+<html ng-app="app">
 <head>
 <meta charset="utf-8" />
 
@@ -15,14 +15,14 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 
 <!-- Chargement des librairies de l'application -->
-<!--<script src="app.js"></script>-->
+<script src="app.js"></script>
 
 <!-- Chargement de BOOTSTRAP-->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 
 <!-- Chargement des STYLES propre à l'application --> 
-<!--<link rel="stylesheet" type="text/css" href="css/styles.css" />-->
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 
 <!-- Dès la déclaration de l'application, $rootScope est défini. -->
 <!-- On peut donc afficher un de ces attributs sans controller -->
@@ -32,13 +32,37 @@
 
 </head>
 <body>
-	<header>
-		<div class="page-header">
-			<h1>
-				TP mediatic
-			</h1>
-		</div>
-	</header>
+	<!-- Menu -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav col-sr-2 col-md-4">
+                        <li class="linavbar">
+                            <a href="media.html">Média</a>
+                        </li>
+                        <li class="linavbar">
+                            <a href="user.html">Adhérent</a>
+                        </li>
+                    </ul>
+                    <!-- right side of the navbar : login -->
+                    <div class="col-sr-6 col-md-8 user-control">
+                        <div class="navbar-text navbar-right ">
+                            <span class="glyphicon glyphicon-user hidden-xs"></span> <a href="#" class="navbar-link">Mark Otto</a>
+                            <a href="login.html" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!-- Zone visée par ngRoute-->
 	<!-- Zone visée par ngRoute-->
 	<ng-view></ng-view>
 </body>

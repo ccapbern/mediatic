@@ -1,0 +1,167 @@
+.reduce {
+    margin: 0 20%;
+    padding: 10px 0;
+    width: 60%;
+}
+
+legend {
+    width: 20%;
+    margin-bottom: 50px;
+    border-bottom: none;
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+table, th, td{
+    text-align: center;
+}
+
+.paginate {
+    text-align: center;
+}
+
+input:required:focus {
+    border: 1px solid #ff8080;
+}
+
+.inputDisabled {
+    display: none;
+}
+
+.user-control {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.user-control {
+    padding-left: 0px;
+}
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar-inverse {
+    border-radius: 0px;
+    z-index: 1000;
+}
+
+.editOn {
+    display: none;
+}
+
+/*     sidebox       */
+.sidebox_clos {
+    position: absolute;
+    left: -30%;
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    background: #000000; 
+    color: #fff;
+    z-index: 500;
+}
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;
+}
+
+#sidebox_clos + #sidebox:target + .sidebox .sidebox_clos {
+    left: 0;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in;
+}
+
+.sidebox a.ouvrir,
+.sidebox a.fermer {
+    padding: 25px 10px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    right: -34px;
+    top: 150px;
+    border-radius: 0 8px 8px 0;
+}
+
+.sidebox a.fermer {
+    display: none;
+}
+
+#sidebox:target + .sidebox a.ouvrir {
+    display: none;
+}
+
+#sidebox:target + .sidebox a.fermer {
+    display: block;
+}
+
+#sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+    left: -30%;
+}
+
+.sidebox .sidebox_clos {
+    position: fixed;
+}
+
+.formsidebox{
+    padding-top: 70px;
+}
+
+.divinput {
+    margin-bottom: 30px;
+}
+
+
+#sidebox:target + .sidebox + nav + .reduce {
+    margin-left : 35%;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#sidebox_clos:target + #sidebox + .sidebox + nav + .reduce {
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+/*#sidebox + nav + .reduce {
+    margin-left : 0 20%;
+}*/
+
+
+/*    sidebox sur ecran smartphone    */
+@media screen and (max-width: 768px) {
+    .reduce {
+        width: 100%;
+    }
+
+    .sidebox_clos {
+        width: 100%;
+    }
+
+    .sidebox a.fermer {
+        right: 0px !important;
+        top: 50px !important;
+        border-radius: 0px !important;
+    }
+
+    #sidebox_clos:target + #sidebox + .sidebox .sidebox_clos {
+        left: -100% !important;
+    }
+
+    .sidebox_clos a.ouvrir {
+        right: -34px !important;
+        top: 150px !important;
+    }
+}
+
+/*     chevauchement recherche tableau       */
+@media screen and (max-width: 992px) {
+    .dataTable {
+        margin-top: 20px;
+    }
+
+}

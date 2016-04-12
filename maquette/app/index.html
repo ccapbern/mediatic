@@ -17,12 +17,15 @@
 <!-- Chargement des librairies de l'application -->
 <script src="js/common.js"></script>
 <script src="app.js"></script>
+<script src="module-menu/js/Menu.js"></script>
+<script src="module-menu/js/controller/MenuController.js"></script>
 <script src="module-media/js/media.js"></script>
 <script src="module-media/js/controller/ListeMediaController.js"></script>
 <script src="module-media/js/controller/MediaController.js"></script>
 <script src="module-media/js/controller/AjouterMediaController.js"></script>
 <script src="module-media/js/service/MediaService.js"></script>
 <script src="module-media/js/directive/myType.js"></script>
+
 
 <!-- Chargement de BOOTSTRAP-->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -39,37 +42,7 @@
 
 </head>
 <body>
-	<!-- Menu -->
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav col-sr-2 col-md-4">
-                        <li class="linavbar">
-                            <a href="media.html">Média</a>
-                        </li>
-                        <li class="linavbar">
-                            <a href="user.html">Adhérent</a>
-                        </li>
-                    </ul>
-                    <!-- right side of the navbar : login -->
-                    <div class="col-sr-6 col-md-8 user-control">
-                        <div class="navbar-text navbar-right ">
-                            <span class="glyphicon glyphicon-user hidden-xs"></span> <a href="#" class="navbar-link">Mark Otto</a>
-                            <a href="login.html" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-        <!-- Zone visée par ngRoute-->
+        <div ng-include="'module-menu/templates/menu.html'"></div>
 	<!-- Zone visée par ngRoute-->
 	<ng-view></ng-view>
 </body>

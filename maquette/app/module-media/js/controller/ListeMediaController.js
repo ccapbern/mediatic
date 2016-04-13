@@ -7,12 +7,24 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
         $rootScope.page.titre = "Liste des médias";
         $rootScope.page.code = "MEDIA";
 
-        myCtrl.medias = undefined;
+        var medias = undefined;
+        myCtrl.getMedias = function(){
+            if(MediaService.updated){
+//              medias = undefined;
+                MediaService.getMedias().then(function (response) {
+                    medias = response;
+                }, function () {
+                    medias = -1;
+                });
+            } else {
+                return medias;
+            }
+        };
 
         MediaService.getMedias().then(function (response) {
-            myCtrl.medias = response;
+            medias = response;
         }, function () {
-            myCtrl.medias = -1;
+            medias = -1;
         });
 
         myCtrl.showMedia = function (id) {

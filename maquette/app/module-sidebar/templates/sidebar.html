@@ -1,32 +1,45 @@
 <div ng-controller="SidebarController as sidebarCtrl">
     <div class="sidebox" ng-class="{sidebox_open : sidebarCtrl.clos}">
         <button ng-click="sidebarCtrl.clos=!sidebarCtrl.clos"><span class="glyphicon glyphicon-search"></span></button>
-        <form action="#" method="post" class="form-horizontal formsidebox">
+        <form class="form-horizontal formsidebox" ng-submit="sidebarCtrl.submitMedia()" ng-if="sidebarCtrl.isMediaActif()">
             <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
             <div class="form-group">
                 <label for="title" class="control-label col-md-1 hidden-xs">Titre</label>
                 <div class="divinput col-sm-12">
-                    <input type="text" name="title" id="title" placeholder="Titre" class="form-control" required>
+                    <input type="text" name="title" ng-model="sidebarCtrl.title" id="title" placeholder="Titre" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="author" class="control-label col-md-1 hidden-xs">Auteur</label>
                 <div class="divinput col-sm-12">
-                    <input type="text" name="author" id="author" placeholder="Auteur" class="form-control" required>
+                    <input type="text" name="author" ng-model="sidebarCtrl.author" id="author" placeholder="Auteur" class="form-control">
                 </div>
             </div>
             <!--liste deroulante-->
             <div class="form-group">                 
                 <label class="control-label col-md-1 hidden-xs">Type</label>
                 <div class="divinput col-sm-12 ">
-                    <select name="type" class="form-control">
+                    <select name="type" ng-model="sidebarCtrl.type" class="form-control">
                         <option value="book">Livre</option>
                         <option value="cd">CD</option>
                         <option value="dvd">DVD</option>
                     </select>
                 </div>
             </div>
-            <input type="submit" name="submit" value="Enregistrer" class="btn btn-success">
+            <input type="submit" name="submit" value="Recherche" class="btn btn-success">
+        </form>
+        
+        <!--Deuxieme form-->
+        
+        <form class="form-horizontal formsidebox" ng-submit="sidebarCtrl.submitAdherent()" ng-if="sidebarCtrl.isAdherentActif()">
+            <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
+            <div class="form-group">
+                <label for="name" class="control-label col-md-1 hidden-xs">Nom</label>
+                <div class="divinput col-sm-12">
+                    <input type="text" name="name" id="title" placeholder="Nom" class="form-control">
+                </div>
+            </div>
+            <input type="submit" name="submit" value="Recherche" class="btn btn-success">
         </form>
     </div>
 </div>

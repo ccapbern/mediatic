@@ -1,9 +1,18 @@
 angular.module('ModuleMedia').service('MediaService', ['$http', function ($http) {
         var self = this;
+        
+        self.updated = false;
+        
+        var filtres = {};
+        self.setFilters = function(p){
+           filtres = p;
+           self.updated = true;
+        }
 
         self.getMedias = function () {
+            self.updated = false;
             var url = "http://10.34.10.140:8080/resource/media.recherche";
-            var promise = $http.get(url).then(function (response) {
+            var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data;
             });
 

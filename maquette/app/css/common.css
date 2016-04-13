@@ -50,6 +50,10 @@ input:required:focus {
     margin-bottom: 0px;
 }
 
+.navbar-right {
+    margin-bottom: 0px;
+}
+
 .navbar-inverse {
     border-radius: 0px;
     z-index: 1000;
@@ -99,19 +103,21 @@ input:required:focus {
 
     .sidebox_open{
         width: 100%;
+        -webkit-transition: left .5s ease-in;
+        transition: left .5s ease-in;
     }
 
-    .sidebox button {
+    .sidebox_open button {
         right: 0px !important;
         top: 50px !important;
         border-radius: 0px !important;
     }
     
-    .sidebox_open button {
+/*    .sidebox_open button {
         right: -34px !important;
         top: 150px !important;
         border-radius: 0px !important;
-    }
+    }*/
 }
 
 /*     chevauchement recherche tableau       */

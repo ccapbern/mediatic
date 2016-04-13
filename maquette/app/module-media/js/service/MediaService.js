@@ -9,13 +9,21 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function ($http)
            self.updated = true;
         }
 
-        self.getMedias = function () {
+        self.getMedias = function (page) {
             self.updated = false;
+            filtres.page = page;
             var url = "http://10.34.10.140:8080/resource/media.recherche";
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data;
             });
-
+            return promise;
+        };
+        
+        self.getNbPageMedias = function () {
+            var url = "http://10.34.10.140:8080/resource/media.recherche.taille";
+            var promise = $http.get(url, {params:filtres}).then(function (response) {
+                return response.data.pages;
+            });
             return promise;
         };
         

@@ -7,12 +7,24 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
         $rootScope.page.titre = "Liste des médias";
         $rootScope.page.code = "MEDIA";
 
+        myCtrl.page = 0;
+        var nbPage = 0;
+
         var medias = undefined;
-        myCtrl.getMedias = function(){
-            if(MediaService.updated){
+        myCtrl.getMedias = function () {
+            if (MediaService.updated) {
 //              medias = undefined;
-                MediaService.getMedias().then(function (response) {
+                MediaService.getMedias(myCtrl.page).then(function (response) {
                     medias = response;
+                }, function () {
+                    medias = -1;
+                });
+                MediaService.getNbPageMedias().then(function (response) {
+                    nbPage = response;
+                    myCtrl.pagesPossibles = [];
+                    for (var i = 0; i < nbPage; i++) {
+                        myCtrl.pagesPossibles.push(i);
+                    }
                 }, function () {
                     medias = -1;
                 });
@@ -21,8 +33,24 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
             }
         };
 
-        MediaService.getMedias().then(function (response) {
+        myCtrl.changePage = function (page) {
+            if (page >= 0 && page < nbPage) {
+                myCtrl.page = page;
+            }
+            MediaService.updated = true;
+        };
+
+        MediaService.getMedias(myCtrl.page).then(function (response) {
             medias = response;
+        }, function () {
+            medias = -1;
+        });
+        MediaService.getNbPageMedias().then(function (response) {
+            nbPage = response;
+            myCtrl.pagesPossibles = [];
+            for (var i = 0; i < nbPage; i++) {
+                myCtrl.pagesPossibles.push(i);
+            }
         }, function () {
             medias = -1;
         });

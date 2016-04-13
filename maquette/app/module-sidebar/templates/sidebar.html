@@ -2,7 +2,7 @@
     <div class="sidebox" ng-class="{sidebox_open : sidebarCtrl.open}">
         <button ng-click="sidebarCtrl.open=!sidebarCtrl.open"><span class="glyphicon glyphicon-search"></span></button>
         <form class="form-horizontal formsidebox" ng-submit="sidebarCtrl.submitMedia()" ng-if="sidebarCtrl.isMediaActif()">
-            <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
+            <input type="button" name="Nouveau" ng-click="sidebarCtrl.goMediaCreate()" value="Nouveau" class="btn btn-primary divinput">
             <div class="form-group">
                 <label for="title" class="control-label col-md-1 hidden-xs">Titre</label>
                 <div class="divinput col-sm-12">
@@ -33,7 +33,7 @@
         <!--Deuxieme form-->
         
         <form class="form-horizontal formsidebox" ng-submit="sidebarCtrl.submitAdherent()" ng-if="sidebarCtrl.isAdherentActif()">
-            <input type="button" name="Nouveau" value="Nouveau" class="btn btn-primary divinput">
+            <input type="button" name="Nouveau" ng-click="sidebarCtrl.goAdherentCreate()" value="Nouveau" class="btn btn-primary divinput">
             <div class="form-group">
                 <label for="name" class="control-label col-md-1 hidden-xs">Nom</label>
                 <div class="divinput col-sm-12">

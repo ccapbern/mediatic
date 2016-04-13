@@ -6,6 +6,7 @@ angular.module('ModuleAdherent').controller('ListeAdherentController', ['$rootSc
         // Je défini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Liste des adhérents";
         $rootScope.page.code = "ADHERENT";
+        $rootScope.sidebar = true;
 
 
         var adherents = undefined;

@@ -57,7 +57,7 @@
 	</div>
 	<div ng-if="isConnected()">
 		<div ng-include="'module-menu/templates/menu.html'"></div>
-		<div ng-include="'module-sidebar/templates/sidebar.html'"></div>
+		<div ng-include="'module-sidebar/templates/sidebar.html'" ng-show="sidebar == true"></div>
 		<!-- Zone visée par ngRoute-->
 		<ng-view></ng-view>
 	</div>

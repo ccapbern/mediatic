@@ -30,4 +30,12 @@ angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$
         self.open=false;
         return true;
     };
+    
+    self.goMediaCreate = function(){
+        return $location.path('/media/create');
+    };
+    
+    self.goAdherentCreate = function(){
+        return $location.path('/adherent/create');
+    };
 }]);

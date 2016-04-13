@@ -5,7 +5,8 @@ angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope',
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
-        $rootScope.page.titre = "Voir un adh�rents";
+        $rootScope.page.titre = "Voir un adh�rents";
+        $rootScope.sidebar = false;
 
         myCtrl.adherent = undefined;
 

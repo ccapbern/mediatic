@@ -6,6 +6,7 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
         // Je défini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Liste des médias";
         $rootScope.page.code = "MEDIA";
+        $rootScope.sidebar = true;
 
         var medias = undefined;
         myCtrl.getMedias = function(){

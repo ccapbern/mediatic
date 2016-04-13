@@ -112,7 +112,7 @@
                     <tbody>
                         <tr ng-repeat="item in adherentCtrl.adherent.emprunt">
                             <td ng-bind="item.media.titre"></td>
-                            <td ng-bind="item.depart"></td>
+                            <td ng-bind="item.depart | date:'dd/MM/yyyy'"></td>
                         </tr>
                     </tbody>
                 </table>

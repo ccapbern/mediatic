@@ -6,7 +6,6 @@ angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope',
         $rootScope.page = $rootScope.page || {};
         // Je dÃ©fini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Voir un adhérents";
-        $rootScope.page.code = "ADHERENT";
 
         myCtrl.adherent = undefined;
 

@@ -16,7 +16,7 @@
                     <td ng-bind="media.titre"></td>
                     <td ng-bind="media.auteur"></td>
                     <td ng-bind="media.emprunteur.nom + ' ' + media.emprunteur.prenom"></td>
-                    <td ng-bind="media.retour"></td>
+                    <td ng-bind="media.retour | date:'dd/MM/yyyy'"></td>
                 </tr>
             </tbody>
         </table>

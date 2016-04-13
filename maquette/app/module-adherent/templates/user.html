@@ -13,7 +13,7 @@
             <tr ng-repeat="adherent in adherentCtrl.adherents" ng-click="adherentCtrl.showAdherent(adherent.id)">
                 <td ng-bind="adherent.id"></td>
                 <td ng-bind="adherent.nom + ' ' + adherent.prenom"></td>
-                <td ng-bind="adherent.date_naissance"></td>
+                <td ng-bind="adherent.date_naissance | date:'dd/MM/yyyy'"></td>
                 <td ng-bind="adherent.emprunt.length"></td>
                 <td></td>
             </tr>

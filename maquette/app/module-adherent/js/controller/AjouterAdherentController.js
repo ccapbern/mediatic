@@ -1,17 +1,16 @@
-angular.module('ModuleAdherent').controller('AjouterAdherentController', ['$rootScope', 'AdherentService', function ($rootScope, AdherentService) {
+angular.module('ModuleAdherent').controller('AjouterAdherentController', ['$rootScope', '$location', 'AdherentService', function ($rootScope, $location, AdherentService) {
         var myCtrl = this;
 
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Ajouter un  adhérents";
-        $rootScope.page.code = "ADHERENT";
 
-        myCtrl.medias = undefined;
+        myCtrl.adherent = undefined;
 
-        AdherentService.addAdherent().then(function (response) {
-            myCtrl.medias = response;
-        }, function () {
-            myCtrl.medias = -1;
-        });
+        myCtrl.addAdherent = function () {
+            AdherentService.addAdherent(myCtrl.adherent);
+            myCtrl.adherent = {};
+            $location.path("/adherent");
+        };
     }]);

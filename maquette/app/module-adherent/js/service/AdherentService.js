@@ -9,18 +9,18 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
 
             return promise;
         };
-        
+
         self.getAdherentsActifs = function () {
             var url = "http://10.34.10.140:8080/resource/adherent.recherche";
             var promise = $http.get(url).then(function (response) {
                 var adherentsActifs = [];
-            	for (var i = 0; i < response.data.length; i++){
-            		var adherent = response.data[i];
-            		if (adherent.cotisation_correcte){
-            			adherentsActifs.push(adherent);
-            		}
-            	}
-            	return adherentsActifs;
+                for (var i = 0; i < response.data.length; i++) {
+                    var adherent = response.data[i];
+                    if (adherent.cotisation_correcte) {
+                        adherentsActifs.push(adherent);
+                    }
+                }
+                return adherentsActifs;
             });
 
             return promise;
@@ -31,8 +31,10 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
             var promise = $http.get(url, {params: {id: id}}).then(function (response) {
                 var data = response.data;
                 data.date_naissance = new Date(data.date_naissance);
-                data.cotisation.debut = new Date(data.cotisation.debut);
-                data.cotisation.fin = new Date(data.cotisation.fin);
+                if (data.cotisation !== undefined) {
+                    data.cotisation.debut = data.cotisation.debut != undefined ? new Date(data.cotisation.debut) : null;
+                    data.cotisation.fin = data.cotisation.fin != undefined ? new Date(data.cotisation.fin) : null;
+                }
                 return data;
             });
 

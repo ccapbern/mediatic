@@ -7,12 +7,25 @@ angular.module('ModuleAdherent').controller('ListeAdherentController', ['$rootSc
         $rootScope.page.titre = "Liste des adhérents";
         $rootScope.page.code = "ADHERENT";
 
-        myCtrl.adherents = undefined;
+
+        var adherents = undefined;
+        myCtrl.getAdherents = function () {
+            if (AdherentService.updated) {
+//                adherents = undefined;
+                AdherentService.getAdherents().then(function (response) {
+                    adherents = response;
+                }, function () {
+                    adherents = -1;
+                });
+            } else {
+                return adherents;
+            }
+        };
 
         AdherentService.getAdherents().then(function (response) {
-            myCtrl.adherents = response;
+            adherents = response;
         }, function () {
-            myCtrl.adherents = -1;
+            adherents = -1;
         });
 
         myCtrl.showAdherent = function (id) {

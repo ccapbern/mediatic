@@ -5,12 +5,12 @@
                 <th>Identifiant</th>
                 <th>Nom</th>
                 <th>Date de naissance</th>
-                <th>Livres empruntés</th>
-                <th>Cotisation à jour</th>
+                <th>Livres empruntï¿½s</th>
+                <th>Cotisation ï¿½ jour</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="adherent in adherentCtrl.adherents" ng-click="adherentCtrl.showAdherent(adherent.id)">
+            <tr ng-repeat="adherent in adherentCtrl.getAdherents()" ng-click="adherentCtrl.showAdherent(adherent.id)">
                 <td ng-bind="adherent.id"></td>
                 <td ng-bind="adherent.nom + ' ' + adherent.prenom"></td>
                 <td ng-bind="adherent.date_naissance | date:'dd/MM/yyyy'"></td>

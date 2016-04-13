@@ -1,4 +1,4 @@
-angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$rootScope', 'MediaService', function($location, $rootScope, MediaService) {
+angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$rootScope', 'MediaService', 'AdherentService', function($location, $rootScope, MediaService, AdherentService) {
     var self = this;
     
     
@@ -15,13 +15,19 @@ angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$
             titre : self.title,
             auteur : self.author,
             type : self.type
-        }
-        MediaService.setFilters(filtres)
+        };
+        MediaService.setFilters(filtres);
+        self.open=false;
         return true;
     };
     
     self.submitAdherent = function(){
-        //TODO
+        var filtres = {
+            nom : self.nom,
+            prenom : self.prenom
+        };
+        AdherentService.setFilters(filtres);
+        self.open=false;
         return true;
     };
 }]);

@@ -1,23 +1,20 @@
 
-angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope', '$location', 'MediaService', function ($rootScope, $location, MediaService) {
+angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope', '$routeParams', 'AdherentService', function ($rootScope, $routeParams, AdherentService) {
         var myCtrl = this;
 
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
-        $rootScope.page.titre = "Voir un adhérents";
+        $rootScope.page.titre = "Voir un adh�rents";
         $rootScope.page.code = "ADHERENT";
 
-        myCtrl.medias = undefined;
+        myCtrl.adherent = undefined;
 
-        MediaService.getMedias().then(function (response) {
-            myCtrl.medias = response;
+        var id = $routeParams.adherent_id;
+
+        AdherentService.getAdherent(id).then(function (response) {
+            myCtrl.adherent = response;
         }, function () {
-            myCtrl.medias = -1;
+            myCtrl.adherent = -1;
         });
-
-        myCtrl.showMedia = function (id) {
-            $location.path('/media/' + id);
-        };
-
     }]);

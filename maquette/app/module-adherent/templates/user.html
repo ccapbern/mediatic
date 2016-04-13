@@ -1,0 +1,41 @@
+<main class="reduce">
+    <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Identifiant</th>
+                <th>Nom</th>
+                <th>Date de naissance</th>
+                <th>Livres empruntés</th>
+                <th>Cotisation à jour</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="adherent in adherentCtrl.adherents" ng-click="adherentCtrl.showAdherent(adherent.id)">
+                <td ng-bind="adherent.id"></td>
+                <td ng-bind="adherent.nom + ' ' + adherent.prenom"></td>
+                <td ng-bind="adherent.date_naissance"></td>
+                <td ng-bind="adherent.emprunt.length"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="paginate">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</main>

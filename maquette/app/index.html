@@ -32,6 +32,9 @@
 <script src="module-adherent/js/controller/AdherentController.js"></script>
 <script src="module-adherent/js/controller/AjouterAdherentController.js"></script>
 <script src="module-adherent/js/service/AdherentService.js"></script>
+<script src="module-login/js/login.js"></script>
+<script src="module-login/js/controller/LoginController.js"></script>
+<script src="module-login/js/service/LoginService.js"></script>
 
 
 <!-- Chargement de BOOTSTRAP-->
@@ -50,9 +53,14 @@
 
 </head>
 <body>
-        <div ng-include="'module-menu/templates/menu.html'"></div>
-	<div ng-include="'module-sidebar/templates/sidebar.html'"></div>
-        <!-- Zone visée par ngRoute-->
-	<ng-view></ng-view>
+	<div ng-if="!isConnected()">
+		<div ng-include="'./module-login/templates/login.html'"></div>
+	</div>
+	<div ng-if="isConnected()">
+		<div ng-include="'module-menu/templates/menu.html'"></div>
+		<div ng-include="'module-sidebar/templates/sidebar.html'" ng-show="sidebar == true"></div>
+		<!-- Zone visée par ngRoute-->
+		<ng-view></ng-view>
+	</div>
 </body>
 </html>

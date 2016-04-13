@@ -5,6 +5,7 @@ angular.module('ModuleMedia').controller('AjouterMediaController', ['$rootScope'
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Ajouter un médias";
+        $rootScope.sidebar = false;
 
         myCtrl.addMedia = function () {
             MediaService.addMedia(myCtrl.ajout);

@@ -19,9 +19,9 @@
                     <!-- right side of the navbar : login -->
                     <div class="col-sr-6 col-md-8 user-control">
                         <div class="navbar-text navbar-right ">
-                            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-user hidden-xs"></span></a>
-                            <a href="#" class="navbar-link">Mark Otto</a>
-                            <a href="login.html" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+                            <a class="navbar-link"><span class="glyphicon glyphicon-user hidden-xs"></span></a>
+                            <a class="navbar-link" ng-bind="menuCtrl.getLogin()"></a>
+                            <a class="navbar-link" ng-click="menuCtrl.deconnexion()"><span class="glyphicon glyphicon-off"></span></a>
                         </div>
                     </div>
                 </div>

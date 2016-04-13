@@ -5,6 +5,7 @@ angular.module('ModuleAdherent').controller('AjouterAdherentController', ['$root
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
         $rootScope.page.titre = "Ajouter un  adhérents";
+        $rootScope.sidebar = false;
 
         myCtrl.adherent = undefined;
 

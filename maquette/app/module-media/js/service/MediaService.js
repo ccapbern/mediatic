@@ -27,4 +27,14 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function ($http)
             
             return promise;
         };
+        
+        self.addEmprunteur = function (media, emprunteur) {
+            var url = "http://10.34.10.140:8080/resource/emprunt.ajout";
+            var promise = $http.post(url, emprunteur.id, media.id).then(function (response) {
+                console.log(response.data);
+            	return response.data;
+            });
+
+            return promise;
+        };
     }]);

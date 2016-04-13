@@ -1,1 +1,155 @@
-<div>display_adherent</div>
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="#" method="post" class="form-horizontal">
+                    <fieldset>
+                        <legend class="hidden-sm hidden-xs">Adhérent</legend>
+
+                        <div class="form-group">
+                            <label for="name" class="control-label col-md-2 col-md-offset-2 hidden-xs">Nom</label>
+                            <div class="col-md-7">
+                                <input ng-show="edit" type="text" ng-model="adherentCtrl.adherent.nom" id="name" placeholder="Nom" class="form-control" required>
+                                <label ng-show="!edit" ng-bind="adherentCtrl.adherent.prenom + ' ' + adherentCtrl.adherent.nom" class="control-label"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dateofbirth" class="control-label col-sm-2 col-md-2 col-md-offset-2 hidden-xs">Date de naissance</label>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <input ng-show="edit" type="date" ng-model="adherentCtrl.adherent.date_naissance" id="dateofbirth" placeholder="jj/mm/aaaa" class="form-control" required>
+                                <label ng-show="!edit" ng-bind="adherentCtrl.adherent.date_naissance | date:'dd/MM/yyyy'" class="control-label"></label>
+                            </div>
+
+                            <label class="control-label col-sm-2 col-md-1 hidden-xs">Âge</label>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <label ng-bind="adherentCtrl.adherent.age" class="control-label"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mail" class="control-label col-md-2 col-md-offset-2 hidden-xs">Email</label>
+                            <div class="col-md-7">
+                                <input ng-show="edit" type="email" ng-model="adherentCtrl.adherent.email" id="mail" placeholder="user@example.com" class="form-control" required>
+                                <label ng-show="!edit" ng-bind="adherentCtrl.adherent.email" class="control-label">user@example.com</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adress" class="control-label col-md-2 col-md-offset-2 hidden-xs">Adresse</label>
+                            <div class="col-md-7">
+                                <input ng-show="edit" ng-model="adherentCtrl.adherent.adresse.ligne1" type="text" id="adress" placeholder="Adresse" class="form-control">
+                                <input ng-show="edit" ng-model="adherentCtrl.adherent.adresse.ligne2" type="text" placeholder="Adresse" class="form-control">
+                                <label ng-show="!edit" ng-bind="adherentCtrl.adherent.adresse.ligne1 + ' ' + adherentCtrl.adherent.adresse.ligne2" class="control-label">Adresse</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="cp" class="control-label col-sm-2 col-md-2 col-md-offset-2 hidden-xs">CP</label>
+                                <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <input ng-show="edit" ng-model="adherentCtrl.adherent.adresse.codepostal" type="text" id="cp" placeholder="CP" class="form-control">
+                                    <label ng-show="!edit" ng-bind="adherentCtrl.adherent.adresse.codepostal" class="control-label"></label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="city" class="control-label col-sm-2 col-md-1 hidden-xs">Ville</label>
+                                <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <input ng-show="edit" ng-model="adherentCtrl.adherent.adresse.ville" type="text" id="city" placeholder="Ville" class="form-control">
+                                    <label ng-show="!edit" ng-bind="adherentCtrl.adherent.adresse.ville" class="control-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <label for="cotisation" class="control-label col-sm-2 col-md-2 col-md-offset-2 hidden-xs">Cotisation</label>
+                                <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <input ng-show="edit" ng-model="adherentCtrl.adherent.cotisation.debut" type="date" id="cotisation" placeholder="Cotisation" class="form-control">
+                                    <label ng-show="!edit" ng-bind="adherentCtrl.adherent.cotisation.debut | date:'dd/MM/yyyy'" class="control-label"></label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="control-label col-sm-2 col-md-1 hidden-xs">Date fin</label>
+                                <div class="col-xs-6 col-sm-4 col-md-3">
+                                    <label ng-bind="adherentCtrl.adherent.cotisation.fin | date:'dd/MM/yyyy'" class="control-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cost" class="control-label col-md-2 col-md-offset-2 hidden-xs">Montant</label>
+                            <div class="col-md-7">
+                                <input ng-show="edit" type="text" ng-model="adherentCtrl.adherent.cotisation.montant" id="cost" placeholder="Montant" class="form-control">
+                                <label ng-show="!edit" ng-bind="adherentCtrl.adherent.cotisation.montant | currency" class="control-label">100</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-offset-10" ng-show="!edit">
+                            <button type="button" class="btn btn-success" ng-click="edit=true">Éditer</button>
+                        </div>
+                        <div class="col-md-offset-8" ng-show="edit">
+                            <button type="button" class="btn btn-success"ng-click="edit=false">Modifier</button>
+                            <button type="button" class="btn btn-danger" ng-click="edit=false">Annuler</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="dataTable col-md-6">
+                <table class="table table-condensed table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-6">
+                                Titre
+                            </th>
+                            <th class="col-xs-6">
+                                Date de l'emprunt
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in adherentCtrl.adherent.emprunt">
+                            <td ng-bind="item.media.titre"></td>
+                            <td ng-bind="item.depart"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="paginate">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline">
+                <fieldset>
+                    <!-- <legend>title or explanatory caption</legend> -->
+                    <div class="form-group">
+                        <label for="title" class="hidden-xs hidden-sm hidden-md">Titre</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Titre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="hidden-xs hidden-sm hidden-md">Date</label>
+                        <input type="date" name="date" id="date" placeholder="JJ/MM/AAAA" class="form-control" required>
+                    </div>
+                    <button type="button" class="btn btn-success">Ajouter</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

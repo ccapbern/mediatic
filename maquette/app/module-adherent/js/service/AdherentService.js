@@ -13,7 +13,11 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
         self.getAdherent = function (id) {
             var url = "http://10.34.10.140:8080/resource/adherent.accession";
             var promise = $http.get(url, {params: {id: id}}).then(function (response) {
-                return response.data;
+                var data = response.data;
+                data.date_naissance = new Date(data.date_naissance);
+                data.cotisation.debut = new Date(data.cotisation.debut);
+                data.cotisation.fin = new Date(data.cotisation.fin);
+                return data;
             });
 
             return promise;

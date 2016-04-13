@@ -6,21 +6,21 @@
                     <legend class="hidden-sm hidden-xs">Média</legend>
                     <div class="form-group">
                         <label for="title" class="control-label col-md-2 col-md-offset-2 hidden-xs">Titre</label>
-                        <div class="col-md-7 editFields">
+                        <div class="col-md-7">
                             <input ng-model="mediaCtrl.media.titre" type="text" name="title" id="title" placeholder="Titre" value="Titre" class="form-control"  ng-show="edit" required>
                             <label class="control-label" ng-bind="mediaCtrl.media.titre" ng-show="!edit"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="author" class="control-label col-md-2 col-md-offset-2 hidden-xs">Auteur</label>
-                        <div class="col-md-7 editFields">
+                        <div class="col-md-7">
                             <input ng-model="mediaCtrl.media.auteur" type="text" name="author" id="author" placeholder="Auteur" value="Auteur" class="form-control"  ng-show="edit" required>
                             <label class="control-label" ng-bind="mediaCtrl.media.auteur" ng-show="!edit"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-2 col-md-offset-2 hidden-xs">Type</label>
-                        <div class="col-md-7 editFields">
+                        <div class="col-md-7">
                             <select ng-model="mediaCtrl.media.type" name="type" class="form-control" ng-show="edit">
                                 <option value="Livre">Livre</option>
                                 <option value="CD">CD</option>
@@ -30,11 +30,11 @@
                         </div>
                     </div>
                     <div class="col-md-offset-10"  ng-show="!edit">
-                        <button type="button" class="btn btn-success edit" ng-click="edit = true">Editer</button>
+                        <button type="button" class="btn btn-success" ng-click="edit = true">Editer</button>
                     </div>
                     <div class="col-md-offset-8"  ng-show="edit">
-                        <button type="button" class="btn btn-success save"  ng-click="edit = false">Modifier</button>
-                        <button type="button" class="btn btn-danger cancel" ng-click="edit = false">Annuler</button>
+                        <button type="button" class="btn btn-success"  ng-click="edit = false">Modifier</button>
+                        <button type="button" class="btn btn-danger" ng-click="edit = false">Annuler</button>
                     </div>
                 </fieldset>
             </form>

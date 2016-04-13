@@ -47,4 +47,15 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
 
             return promise;
         };
+        
+        self.addEmprunteur = function (media, idEmprunteur) {
+            var url = "http://10.34.10.140:8080/resource/emprunt.ajout";
+            var promise = $http.post(url, idEmprunteur, media.id).then(function (response) {
+            	return response.data;
+            },function(response){
+            	return response.data;
+            });
+
+            return promise;
+        };
     }]);

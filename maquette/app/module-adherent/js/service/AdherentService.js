@@ -9,6 +9,22 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
 
             return promise;
         };
+        
+        self.getAdherentsActifs = function () {
+            var url = "http://10.34.10.140:8080/resource/adherent.recherche";
+            var promise = $http.get(url).then(function (response) {
+                var adherentsActifs = [];
+            	for (var i = 0; i < response.data.length; i++){
+            		var adherent = response.data[i];
+            		if (adherent.cotisation_correcte){
+            			adherentsActifs.push(adherent);
+            		}
+            	}
+            	return adherentsActifs;
+            });
+
+            return promise;
+        };
 
         self.getAdherent = function (id) {
             var url = "http://10.34.10.140:8080/resource/adherent.accession";

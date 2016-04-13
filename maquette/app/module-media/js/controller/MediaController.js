@@ -21,16 +21,16 @@ angular.module('ModuleMedia').controller('MediaController', ['$rootScope', '$rou
         });
         
         
-        myCtrl.adherents = undefined;
+        myCtrl.adherentsActifs = undefined;
 
-        AdherentService.getAdherents().then(function (response) {
-            myCtrl.adherents = response;
+        AdherentService.getAdherentsActifs().then(function (response) {
+            myCtrl.adherentsActifs = response;
         }, function () {
-            myCtrl.adherents = -1;
+            myCtrl.adherentsActifs = -1;
         });
         
         myCtrl.addEmprunteur = function(){
-        	MediaService.addEmprunteur(myCtrl.media, myCtrl.ajout.selected);
+        	MediaService.addEmprunteur(id, myCtrl.ajout.selected);
         	myCtrl.ajout = {};
         };
     }]);

@@ -61,7 +61,7 @@ input:required:focus {
 
 /*     sidebox       */
 .sidebox {
-    position: absolute;
+    position: fixed;
     left: -30%;
     width: 30%;
     height: 100%;
@@ -71,6 +71,8 @@ input:required:focus {
     z-index: 500;
     -webkit-transition: left .5s ease-in;
     transition: left .5s ease-in;
+    top:0;
+    padding-top: 100px;
 }
 
 .sidebox.sidebox_open {
@@ -87,10 +89,6 @@ input:required:focus {
     border-radius: 0 8px 8px 0;
 }
 
-.formsidebox{
-    padding-top: 70px;
-}
-
 .divinput {
     margin-bottom: 30px;
 }
@@ -99,6 +97,7 @@ input:required:focus {
 @media screen and (max-width: 768px) {
     .reduce {
         width: 100%;
+/*        margin: 10px;*/
     }
 
     .sidebox_open{
@@ -109,15 +108,10 @@ input:required:focus {
 
     .sidebox_open button {
         right: 0px !important;
-        top: 50px !important;
+        top: 100px !important;
         border-radius: 0px !important;
     }
     
-/*    .sidebox_open button {
-        right: -34px !important;
-        top: 150px !important;
-        border-radius: 0px !important;
-    }*/
 }
 
 /*     chevauchement recherche tableau       */

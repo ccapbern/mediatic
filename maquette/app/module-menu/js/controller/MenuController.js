@@ -1,4 +1,4 @@
-angular.module('ModuleMenu').controller('MenuController', ['$location', '$rootScope', 'LoginService', function($location, $rootScope, LoginService) {
+﻿angular.module('ModuleMenu').controller('MenuController', ['$location', '$rootScope', 'LoginService', function($location, $rootScope, LoginService) {
     var self = this;
     
     self.isMediaActif = function(){

@@ -1,4 +1,4 @@
-
+﻿
 // Récupération du module des catalogue pour y ajouter le controller
 angular.module('ModuleMedia').controller('MediaController', ['$rootScope', '$routeParams', 'MediaService', 'AdherentService', function ($rootScope, $routeParams, MediaService, AdherentService) {
         var myCtrl = this;

@@ -1,4 +1,4 @@
-angular.module('ModuleAdherent', ['ngRoute']);
+﻿angular.module('ModuleAdherent', ['ngRoute']);
 
 
 angular.module('ModuleAdherent').config(function ($routeProvider) {

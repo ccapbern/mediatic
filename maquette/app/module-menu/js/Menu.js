@@ -1,1 +1,1 @@
-angular.module('ModuleMenu', []);
+﻿angular.module('ModuleMenu', []);

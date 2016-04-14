@@ -1,4 +1,4 @@
-<div ng-controller="SidebarController as sidebarCtrl">
+﻿<div ng-controller="SidebarController as sidebarCtrl">
     <div class="sidebox" ng-class="{sidebox_open : sidebarCtrl.open}">
         <button ng-click="sidebarCtrl.open=!sidebarCtrl.open"><span class="glyphicon glyphicon-search"></span></button>
         <form class="form-horizontal formsidebox" ng-submit="sidebarCtrl.submitMedia()" ng-if="sidebarCtrl.isMediaActif()">

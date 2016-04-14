@@ -1,4 +1,4 @@
-angular.module('ModuleMedia', ['ngRoute']);
+﻿angular.module('ModuleMedia', ['ngRoute']);
 
 angular.module('ModuleMedia').config(function ($routeProvider) {
     $routeProvider.when('/media', {

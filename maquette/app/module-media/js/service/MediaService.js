@@ -1,4 +1,4 @@
-angular.module('ModuleMedia').service('MediaService', ['$http', function ($http) {
+﻿angular.module('ModuleMedia').service('MediaService', ['$http', function ($http) {
         var self = this;
         
         self.updated = false;

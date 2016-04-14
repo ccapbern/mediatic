@@ -1,4 +1,4 @@
-angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', '$location', 'MediaService', function ($rootScope, $location, MediaService) {
+﻿angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', '$location', 'MediaService', function ($rootScope, $location, MediaService) {
         var myCtrl = this;
 
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini

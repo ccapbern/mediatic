@@ -1,4 +1,4 @@
-angular.module('ModuleAdherent').service('AdherentService', ['$http', function ($http) {
+﻿angular.module('ModuleAdherent').service('AdherentService', ['$http', function ($http) {
         var self = this;
         
         self.updated = false;

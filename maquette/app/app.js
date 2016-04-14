@@ -1,4 +1,4 @@
-
+﻿
 // CrÃ©ation du module app avec les dÃ©pendances :
 //  - ng-route : pour gÃ©rer des URL diffÃ©rentes
 

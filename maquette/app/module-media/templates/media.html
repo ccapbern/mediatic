@@ -11,25 +11,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="media in mediaCtrl.getMedias()" ng-click="mediaCtrl.showMedia(media.id)">
-                    <td my-type="media.type"></td>
-                    <td ng-bind="media.titre"></td>
-                    <td ng-bind="media.auteur"></td>
-                    <td ng-bind="media.emprunteur.nom + ' ' + media.emprunteur.prenom"></td>
-                    <td ng-bind="media.retour | date:'dd/MM/yyyy'"></td>
+                <tr data-ng-repeat="media in mediaCtrl.getMedias()" data-ng-click="mediaCtrl.showMedia(media.id)">
+                    <td data-my-type="media.type"></td>
+                    <td data-ng-bind="media.titre"></td>
+                    <td data-ng-bind="media.auteur"></td>
+                    <td data-ng-bind="media.emprunteur.nom + ' ' + media.emprunteur.prenom"></td>
+                    <td data-ng-bind="media.retour | date:'dd/MM/yyyy'"></td>
                 </tr>
             </tbody>
         </table>
         <div class="paginate">
             <ul class="pagination">
                 <li>
-                    <a ng-click="mediaCtrl.changePage(mediaCtrl.page - 1)" aria-label="Previous">
+                    <a data-ng-click="mediaCtrl.changePage(mediaCtrl.page - 1)" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li ng-repeat="page in mediaCtrl.pagesPossibles" ng-class="{active:page==mediaCtrl.page}"><a ng-click="mediaCtrl.changePage(page)" ng-bind="page + 1"></a></li>
+                <li data-ng-repeat="page in mediaCtrl.pagesPossibles" data-ng-class="{active:page==mediaCtrl.page}"><a data-ng-click="mediaCtrl.changePage(page)" data-ng-bind="page + 1"></a></li>
                 <li>
-                    <a ng-click="mediaCtrl.changePage(mediaCtrl.page + 1)" aria-label="Next">
+                    <a data-ng-click="mediaCtrl.changePage(mediaCtrl.page + 1)" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>

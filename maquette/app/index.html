@@ -1,6 +1,6 @@
 ﻿<!doctype html>
 <!-- Déclaration du module principal de l'application-->
-<html ng-app="App">
+<html data-ng-app="App">
 <head>
 <meta charset="utf-8" />
 
@@ -47,16 +47,16 @@
 <!-- On peut donc afficher un de ces attributs sans controller -->
 <!-- Celui ci doit être défini ailleurs, dans les controllers par exemple. -->
 
-<title ng-bind="page.titre"></title>
+<title data-ng-bind="page.titre"></title>
 
 </head>
 <body>
-	<div ng-if="!isConnected()">
-		<div ng-include="'./module-login/templates/login.html'"></div>
+	<div data-ng-if="!isConnected()">
+		<div data-ng-include="'./module-login/templates/login.html'"></div>
 	</div>
-	<div ng-if="isConnected()">
-		<div ng-include="'module-menu/templates/menu.html'"></div>
-		<div ng-include="'module-sidebar/templates/sidebar.html'" ng-show="sidebar == true"></div>
+	<div data-ng-if="isConnected()">
+		<div data-ng-include="'module-menu/templates/menu.html'"></div>
+		<div data-ng-include="'module-sidebar/templates/sidebar.html'" data-ng-show="sidebar == true"></div>
 		<!-- Zone visée par ngRoute-->
 		<ng-view></ng-view>
 	</div>

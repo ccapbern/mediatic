@@ -1,4 +1,4 @@
-angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$rootScope', 'MediaService', 'AdherentService', function($location, $rootScope, MediaService, AdherentService) {
+﻿angular.module('ModuleSidebar').controller('SidebarController', ['$location', '$rootScope', 'MediaService', 'AdherentService', function($location, $rootScope, MediaService, AdherentService) {
     var self = this;
     
     

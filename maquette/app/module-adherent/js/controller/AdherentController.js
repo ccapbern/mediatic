@@ -1,11 +1,11 @@
-
+﻿
 angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope', '$routeParams', 'AdherentService', 'MediaService', function ($rootScope, $routeParams, AdherentService, MediaService) {
         var myCtrl = this;
 
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini
         $rootScope.page = $rootScope.page || {};
         // Je défini l'attribut TITRE de PAGE
-        $rootScope.page.titre = "Voir un adh�rents";
+        $rootScope.page.titre = "Voir un adhérents";
         $rootScope.sidebar = false;
 
         myCtrl.adherent = undefined;

@@ -5,8 +5,8 @@
                 <th>Identifiant</th>
                 <th>Nom</th>
                 <th>Date de naissance</th>
-                <th>Livres emprunt�s</th>
-                <th>Cotisation � jour</th>
+                <th>Livres empruntés</th>
+                <th>Cotisation à jour</th>
             </tr>
         </thead>
         <tbody>
@@ -22,17 +22,13 @@
     <div class="paginate">
         <ul class="pagination">
             <li>
-                <a href="#" aria-label="Previous">
+                <a ng-click="adherentCtrl.changePage(adherentCtrl.page - 1)" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li ng-repeat="page in adherentCtrl.pagesPossibles" ng-class="{active:page==adherentCtrl.page}"><a ng-click="adherentCtrl.changePage(page)" ng-bind="page + 1"></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a ng-click="adherentCtrl.changePage(adherentCtrl.page + 1)" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

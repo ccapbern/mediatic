@@ -1,4 +1,4 @@
-
+﻿
 // Récupération du module des catalogue pour y ajouter le controller
 angular.module('ModuleLogin').controller('LoginController', ['$rootScope', '$routeParams', 'LoginService', function ($rootScope, $routeParams, LoginService) {
 	var myCtrl = this;

@@ -1,4 +1,4 @@
-angular.module('ModuleAdherent').service('AdherentService', ['$http', function ($http) {
+﻿angular.module('ModuleAdherent').service('AdherentService', ['$http', function ($http) {
         var self = this;
         
         self.updated = false;
@@ -9,14 +9,24 @@ angular.module('ModuleAdherent').service('AdherentService', ['$http', function (
            self.updated = true;
         }
 
-        self.getAdherents = function () {
+        self.getAdherents = function (page) {
             self.updated = false;
+            filtres.page = page;
             var url = "http://10.34.10.140:8080/resource/adherent.recherche";
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data;
             });
 
             return promise;
+        };
+        
+        self.getNbPageAdherent = function() {
+        	var url = "http://10.34.10.140:8080/resource/adherent.recherche.taille";
+        	var promise = $http.get(url, {params:filtres}).then(function (response) {
+        		return response.data.pages;
+        	});
+        	
+        	return promise;
         };
 
         self.getAdherentsActifs = function () {

@@ -1,4 +1,4 @@
-
+﻿
 angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope', '$routeParams', 'AdherentService', 'MediaService', function ($rootScope, $routeParams, AdherentService, MediaService) {
         var myCtrl = this;
 

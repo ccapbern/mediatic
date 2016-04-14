@@ -28,10 +28,16 @@
             }
         };
 
-        
-
         myCtrl.showMedia = function (id) {
             $location.path('/media/' + id);
+        };
+        
+        myCtrl.triMedia = function(tri) {
+        	var filtres = {
+        			tri: tri
+        	};
+        	
+        	MediaService.setFilters(filtres);
         };
         
         var updateMedias = function(page) {

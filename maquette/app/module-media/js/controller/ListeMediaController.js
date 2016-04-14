@@ -14,21 +14,8 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
         var medias = undefined;
         myCtrl.getMedias = function () {
             if (MediaService.updated) {
-//              medias = undefined;
-                MediaService.getMedias(myCtrl.page).then(function (response) {
-                    medias = response;
-                }, function () {
-                    medias = -1;
-                });
-                MediaService.getNbPageMedias().then(function (response) {
-                    nbPage = response;
-                    myCtrl.pagesPossibles = [];
-                    for (var i = 0; i < nbPage; i++) {
-                        myCtrl.pagesPossibles.push(i);
-                    }
-                }, function () {
-                    medias = -1;
-                });
+            	//medias = undefined;
+                updateMedias(myCtrl.page);
             } else {
                 return medias;
             }
@@ -37,27 +24,33 @@ angular.module('ModuleMedia').controller('ListeMediaController', ['$rootScope', 
         myCtrl.changePage = function (page) {
             if (page >= 0 && page < nbPage) {
                 myCtrl.page = page;
+                MediaService.updated = true;
             }
-            MediaService.updated = true;
         };
 
-        MediaService.getMedias(myCtrl.page).then(function (response) {
-            medias = response;
-        }, function () {
-            medias = -1;
-        });
-        MediaService.getNbPageMedias().then(function (response) {
-            nbPage = response;
-            myCtrl.pagesPossibles = [];
-            for (var i = 0; i < nbPage; i++) {
-                myCtrl.pagesPossibles.push(i);
-            }
-        }, function () {
-            medias = -1;
-        });
+        
 
         myCtrl.showMedia = function (id) {
             $location.path('/media/' + id);
         };
+        
+        var updateMedias = function(page) {
+        	MediaService.getMedias(page).then(function (response) {
+                medias = response;
+            }, function () {
+                medias = -1;
+            });
+            MediaService.getNbPageMedias().then(function (response) {
+                nbPage = response;
+                myCtrl.pagesPossibles = [];
+                for (var i = 0; i < nbPage; i++) {
+                    myCtrl.pagesPossibles.push(i);
+                }
+            }, function () {
+                medias = -1;
+            });
+        }
+        
+        updateMedias(myCtrl.page);
 
     }]);

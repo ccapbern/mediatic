@@ -16,6 +16,7 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function ($http)
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data;
             });
+            
             return promise;
         };
         
@@ -24,6 +25,7 @@ angular.module('ModuleMedia').service('MediaService', ['$http', function ($http)
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data.pages;
             });
+            
             return promise;
         };
         

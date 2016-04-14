@@ -66,4 +66,8 @@ angular.module('ModuleMedia').controller('MediaController', ['$rootScope', '$rou
         	MediaService.addEmprunteur(id, myCtrl.ajout.selected);
         	myCtrl.ajout = {};
         };
+        
+        myCtrl.editMedia = function() {
+        	MediaService.editMedia(myCtrl.media);
+        }
     }]);

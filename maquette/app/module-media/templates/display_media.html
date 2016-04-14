@@ -1,4 +1,4 @@
-﻿<div class="container-fluid">
+<div class="container-fluid">
     <main>
         <div class="col-md-6">
             <form action="#" method="post" class="form-horizontal">
@@ -33,7 +33,7 @@
                         <button type="button" class="btn btn-success" ng-click="edit = true">Éditer</button>
                     </div>
                     <div class="col-md-offset-8"  ng-show="edit">
-                        <button type="button" class="btn btn-success"  ng-click="edit = false">Modifier</button>
+                        <button type="button" class="btn btn-success"  ng-click="edit=false; mediaCtrl.editMedia()">Modifier</button>
                         <button type="button" class="btn btn-danger" ng-click="edit = false">Annuler</button>
                     </div>
                 </fieldset>

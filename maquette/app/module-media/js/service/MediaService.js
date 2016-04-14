@@ -73,4 +73,13 @@
 
             return promise;
         };
+        
+        self.editMedia = function(media) {
+        	var url = "http://10.34.10.140:8080/resource/media.modification";
+        	var promise = $http.post(url, media).then(function (response) {
+        		return response.data;
+        	}, function(response) {
+        		return response.data;
+        	});
+        };
     }]);

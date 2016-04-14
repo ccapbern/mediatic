@@ -32,7 +32,7 @@
             $location.path('/adherent/' + id);
         };
         
-         var updateAdherents = function(page) {
+        var updateAdherents = function(page) {
         	AdherentService.getAdherents(page).then(function (response) {
                 adherents = response;
             }, function () {

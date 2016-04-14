@@ -8,7 +8,7 @@
            filtres = p;
            self.updated = true;
         }
-
+        
         self.getAdherents = function (page) {
             self.updated = false;
             filtres.page = page;
@@ -78,5 +78,14 @@
             });
 
             return promise;
+        };
+        
+        self.editAdherent = function editAdherent(adherent) {
+        	var url = "http://10.34.10.140:8080/resource/adherent.modification";
+        	var promise = $http.post(url, adherent).then(function (response) {
+        		return response.data;
+        	}, function (response) {
+        		return response.data;
+        	});
         };
     }]);

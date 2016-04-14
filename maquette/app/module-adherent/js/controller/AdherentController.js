@@ -60,4 +60,8 @@ angular.module('ModuleAdherent').controller('AdherentController', ['$rootScope',
         	AdherentService.addEmprunteur(myCtrl.ajout.selected, id);
         	myCtrl.ajout = {};
         };
+        
+        myCtrl.editAdherent = function() {
+        	AdherentService.editAdherent(myCtrl.adherent);
+        }
     }]);

@@ -91,7 +91,7 @@
                             <button type="button" class="btn btn-success" ng-click="edit=true">Éditer</button>
                         </div>
                         <div class="col-md-offset-8" ng-show="edit">
-                            <button type="button" class="btn btn-success"ng-click="edit=false">Modifier</button>
+                            <button type="button" class="btn btn-success"ng-click="edit=false; adherentCtrl.editAdherent()">Modifier</button>
                             <button type="button" class="btn btn-danger" ng-click="edit=false">Annuler</button>
                         </div>
                     </fieldset>

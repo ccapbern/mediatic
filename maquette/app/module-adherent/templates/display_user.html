@@ -110,7 +110,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in adherentCtrl.adherent.emprunt">
+	                    <tr ng-show="adherentCtrl.empruntsTotaux.length == 0">
+	                        <td colspan="3">Pas d'emprunt</td>
+	                    </tr>
+                        <tr ng-repeat="item in adherentCtrl.emprunts">
                             <td ng-bind="item.media.titre"></td>
                             <td ng-bind="item.depart | date:'dd/MM/yyyy'"></td>
                         </tr>
@@ -118,24 +121,20 @@
                 </table>
             </div>
             <div class="paginate">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+	            <ul class="pagination" ng-hide="adherentCtrl.empruntsTotaux.length == 0">
+	                <li>
+	                    <a ng-click="adherentCtrl.changePageEmprunt(adherentCtrl.pageEmprunt - 1)" aria-label="Previous">
+	                        <span aria-hidden="true">&laquo;</span>
+	                    </a>
+	                </li>
+	                <li ng-repeat="pageEmprunt in adherentCtrl.pagesEmpruntPossibles" ng-class="{active:pageEmprunt==adherentCtrl.pageEmprunt}"><a ng-click="adherentCtrl.changePageEmprunt(pageEmprunt)" ng-bind="pageEmprunt + 1"></a></li>
+	                <li>
+	                    <a ng-click="adherentCtrl.changePageEmprunt(adherentCtrl.pageEmprunt + 1)" aria-label="Next">
+	                        <span aria-hidden="true">&raquo;</span>
+	                    </a>
+	                </li> 
+	            </ul>
+	        </div>
             <form class="form-inline" ng-submit="adherentCtrl.addEmprunteur()">
                 <fieldset>
                     <!-- <legend>title or explanatory caption</legend> -->
@@ -143,7 +142,7 @@
                         <label for="title" class="hidden-xs hidden-sm hidden-md">Titre</label>
                         <select class="form-control" 
 								ng-model="adherentCtrl.ajout.selected"
-								ng-options="media as media.titre  for media in adherentCtrl.mediasDisponibles">
+								ng-options="media as media.titre for media in adherentCtrl.mediasDisponibles">
 						</select>
                     </div>
 					<div class="form-group">

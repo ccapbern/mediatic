@@ -16,6 +16,7 @@
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data;
             });
+            
             return promise;
         };
         
@@ -24,6 +25,7 @@
             var promise = $http.get(url, {params:filtres}).then(function (response) {
                 return response.data.pages;
             });
+            
             return promise;
         };
         

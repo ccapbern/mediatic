@@ -1,4 +1,4 @@
-angular.module('ModuleMedia').directive('myType', function(){
+﻿angular.module('ModuleMedia').directive('myType', function(){
    return function(scope, element, attrs) {
        scope.$watch(attrs.myType, function(value) {
            element.text('');

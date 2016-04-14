@@ -1,4 +1,4 @@
-angular.module('ModuleAdherent').controller('AjouterAdherentController', ['$rootScope', '$location', 'AdherentService', function ($rootScope, $location, AdherentService) {
+﻿angular.module('ModuleAdherent').controller('AjouterAdherentController', ['$rootScope', '$location', 'AdherentService', function ($rootScope, $location, AdherentService) {
         var myCtrl = this;
 
         // Je défini l'attribut PAGE pas si il n'ai pas déjà défini

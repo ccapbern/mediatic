@@ -1,4 +1,4 @@
-angular.module('ModuleLogin').service('LoginService', ['$http', '$rootScope', function ($http, $rootScope) {
+﻿angular.module('ModuleLogin').service('LoginService', ['$http', '$rootScope', function ($http, $rootScope) {
 	var self = this;
 	
 	var isConnected = true;

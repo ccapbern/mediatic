@@ -1,1 +1,1 @@
-angular.module('ModuleSidebar', []);
+﻿angular.module('ModuleSidebar', []);

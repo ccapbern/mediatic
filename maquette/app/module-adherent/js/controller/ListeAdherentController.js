@@ -21,6 +21,13 @@
             }
         };
         
+        myCtrl.triAdherents = function (tri) {
+                var filtres = {
+                    tri : tri
+                };
+                AdherentService.setFilters(filtres);
+        };
+        
         myCtrl.changePage = function (page) {
         	if (page >= 0 && page < nbPage) {
         		myCtrl.page = page;

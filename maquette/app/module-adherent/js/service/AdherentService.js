@@ -7,7 +7,7 @@
         self.setFilters = function(p){
            filtres = p;
            self.updated = true;
-        }
+        };
         
         self.getAdherents = function (page) {
             self.updated = false;
